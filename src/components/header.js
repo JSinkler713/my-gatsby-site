@@ -25,7 +25,7 @@ const NavLink = styled(Link)`
 const Header = () => (
   <header
     css={css`
-      background: #eee;
+      background: cadetblue; 
       border-bottom: 1px solid #ddd;
       display: flex;
       justify-content: space-between;

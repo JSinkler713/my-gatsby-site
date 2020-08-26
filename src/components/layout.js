@@ -48,6 +48,12 @@ const Layout = ({children}) => {
           margin-top: 0.5rem;
           }
         }
+        pre {
+          background-color: #f3f3f3;
+          overflow-x: scroll;
+          border-radius: 3px;
+          padding: 5px;
+        }
 
         strong {
         color: #222;
