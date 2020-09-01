@@ -73,7 +73,7 @@ const HomeLayout = ({children}) => {
           background-image: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
           background-repeat: no-repeat;
           background-size: cover;
-          background-position: center;
+          background-position: center top;
           text-align: center;
           h1 {
             padding-top: 20px;
