@@ -55,6 +55,9 @@ const Layout = ({children}) => {
           padding: 5px;
         }
 
+        a:visited {
+         color: black;
+        }
         strong {
         color: #222;
         }
