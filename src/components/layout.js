@@ -54,9 +54,11 @@ const Layout = ({children}) => {
           border-radius: 3px;
           padding: 5px;
         }
-
-        a:visited {
-         color: black;
+        a:visited, a {
+          color: black;
+        }
+        a:hover {
+          font-weight: 600
         }
         strong {
         color: #222;
