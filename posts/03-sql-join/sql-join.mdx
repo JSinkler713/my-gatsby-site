@@ -27,7 +27,8 @@ Well, this first part is the same as it would be if we only had one table. So do
 ```
 SELECT * FROM city
 ```
-![image of tables](two-tables-2.png)
+![step1 sqljoin](./images/Step1SQLJoin.png)
+
 ### Step 2. JOIN statement
 
 We need to reference the other table Country even though we are not returning anything from it. Since our `WHERE` will be dependent on a row within it, we need to `JOIN` it to get access.
@@ -36,10 +37,9 @@ We need to reference the other table Country even though we are not returning an
 JOIN country
 ```
 Done.
-![image of tables](two-tables-3.png)
+![step2 sqljoin](./images/Step2SQLJoin.png)
 
-
-### Step 3. ON
+Step 3. ON
 Ok not really done... SQL is pretty great, but you still need to explain how you are joining these, so we need to explain the two keys that match up between these tables.
 
 #### Write a equality statement for the two rows that match up
@@ -47,21 +47,30 @@ Ok not really done... SQL is pretty great, but you still need to explain how you
 ```
 ON city.countryCode = country.code
 ```
-![image of tables](two-tables-4.png)
+![step3 sqljoin](./images/Step3SQLJoin.png)
+
 ### Step 4. WHERE
 Now that we have JOINED the <em>country</em> table we can use WHERE like we normally would. At this point I generally imagine that I've created a super table. 
 
-![image of superTable](superTable.png)
+![step4 sqljoin](./images/Step4SQLJoin.png)
 
 In reality we haven't. Since it would be really inefficient to have each city entry with all this data unless we really needed it. But we can act like we did. And make our selection based only on those countries within Africa.
 ```
 WHERE country.continent = 'AFR'
 ```
 #
-Alright, thats a solid basic JOIN between two different tables. You can easily keep doing multiple JOINs with repeated statements like this...
-```
-JOIN new table
-ON
-.primaryKey = oldtable.foreignKey
-![image of tables](two-tables-5.png)
+Alright, thats a solid basic JOIN between two different tables with a One-to-Many relationship
+Total block of code would be 
 
+```
+SELECT city.name FROM city
+JOIN country
+ON city.countryCode = country.code
+WHERE country.continent = 'AFR'
+```
+
+Go find a couple basic SQL JOIN challenges and try it out.
+
+Happy coding,
+
+James
