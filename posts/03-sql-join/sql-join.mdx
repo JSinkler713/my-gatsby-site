@@ -59,8 +59,7 @@ Cities have no direct connection to continents which could be it's own table her
 WHERE country.continent = 'AFR'
 ```
 #
-Alright, thats a solid basic JOIN between two different tables with a One-to-Many relationship
-Total block of code would be 
+Thats the last piece of the puzzle! So our total block of SQL query would look something like this.
 
 ```
 SELECT city.name FROM city
@@ -69,7 +68,7 @@ ON city.countryCode = country.code
 WHERE country.continent = 'AFR'
 ```
 
-Go find a couple basic SQL JOIN challenges and try it out.
+Alright, thats a solid basic JOIN between two different tables with a One-to-Many relationship. Go find a couple basic SQL JOIN challenges and try out your new knowledge. If you feel like you're getting the hang no problem, look for some problems with many-to-many relationships where you need to use a JOIN TABLE. You got this!
 
 Happy coding,
 
