@@ -15,8 +15,6 @@ The <em>city</em> table does have a row <strong><em>countryCode</em></strong>, w
 #
 ### Task : Write a query to get all cities w/ continent of 'AFR'
 
-![image of tables](two-tables-1.png)
-
 #
 
 ### Step 1: SELECT statement
@@ -25,7 +23,7 @@ So given these two tables, if you've never done a join before, I want you to thi
 #### Write a query to get all cities
 Well, this first part is the same as it would be if we only had one table. So don't worry about the other table yet, lets just write the first part
 ```
-SELECT * FROM city
+SELECT city.name FROM city
 ```
 ![step1 sqljoin](./images/Step1SQLJoin.png)
 
@@ -52,9 +50,11 @@ ON city.countryCode = country.code
 ### Step 4. WHERE
 Now that we have JOINED the <em>country</em> table we can use WHERE like we normally would. At this point I generally imagine that I've created a super table. 
 
-![step4 sqljoin](./images/Step4SQLJoin.png)
 
-In reality we haven't. Since it would be really inefficient to have each city entry with all this data unless we really needed it. But we can act like we did. And make our selection based only on those countries within Africa.
+We haven't really, but we do have access to all the rows in each table. It would be really inefficient to have each city entry with all this extra country data unless we really needed it. But using a JOIN we can act like we do now. We make our selection based only on those countries within the continent Africa.
+
+Cities have no direct connection to continents which could be it's own table here as well, but since they have a direct connection to the country, we can query WHERE our contry.continent is equal to 'Afr'.
+
 ```
 WHERE country.continent = 'AFR'
 ```
