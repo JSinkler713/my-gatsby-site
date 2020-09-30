@@ -6,6 +6,8 @@ image: ./images/two-tables-1.png
 ---
 # Basic SQL JOIN
 
+![step0 sqljoin](./images/two-tables-1.png)
+
 So you have some tables in SQL with a relationship between them, and you want to return something from one table, but based on a condition in another. Great! `JOIN`
 
 As always, I think it is best to talk about this by looking at an example. We are going to borrow a problem close to one I found on <a href='hackerRank'>hackerRank</a> the other day. Basically you had a <em>city</em>, and a <em>country</em> table. 
@@ -68,6 +70,7 @@ ON city.countryCode = country.code
 WHERE country.continent = 'AFR'
 ```
 
+![step4 sqljoin](./images/Step4SQLJoin.png)
 Alright, thats a solid basic JOIN between two different tables with a One-to-Many relationship. Go find a couple basic SQL JOIN challenges and try out your new knowledge. If you feel like you're getting the hang no problem, look for some problems with many-to-many relationships where you need to use a JOIN TABLE. You got this!
 
 Happy coding,
