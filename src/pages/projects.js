@@ -5,10 +5,10 @@ import Layout from '../components/layout'
 export default ()=> { 
   return (
     <Layout>
-      <h1>James Sinkler</h1>
      <div> 
-       <h1>Projects</h1>
+       <h1>My Projects</h1>
        <video style={{width:'375px', height: '669px'}} src='https://i.imgur.com/OLIbE7R.mp4' autoplay='true' /> 
+       <video style={{width:'375px', height: '669px'}} src='https://i.imgur.com/r3gJurD.mp4' autoplay='true' /> 
      </div> 
     </Layout>
   ) 
