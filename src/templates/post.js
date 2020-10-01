@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet'
 import { graphql } from 'gatsby';
 import { css } from '@emotion/core';
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -12,6 +13,7 @@ export const query = graphql`
       frontmatter {
         title
         author
+        meta
       }
       body
     }
@@ -20,6 +22,11 @@ export const query = graphql`
 
 const PostTemplate = ({ data: { mdx: post } }) => (
   <Layout>
+      <Helmet>
+        <html lang='en' />
+        <title>{post.frontmatter.title}</title>
+        <meta name='description' content={post.frontmatter.meta} />
+      </Helmet>
     <h1>{post.frontmatter.title}</h1>
     <p css={css`font-size: 0.75rem`}>{post.frontmatter.author}</p>
     <MDXRenderer>{post.body}</MDXRenderer>
