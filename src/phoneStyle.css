@@ -1,0 +1,83 @@
+.phone {
+  min-width: 300px;
+  height: 555px;
+  border: 15px solid black;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  position: relative;
+  box-sizing: revert;
+  transition: 1s ease;
+}
+
+.phone--top {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 101%;
+  height: 60px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:1px solid black;
+}
+.speaker {
+  width: 33%;
+  height: 12px;
+  background-color: gray;
+  border-radius: 10px;
+}
+.phone--content {
+  position: absolute;
+  background-color: #f1f1f1;
+  margin-top: 60px;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.phone--bottom {
+  position: absolute;
+  width: 101%;
+  left: -1px;
+  height: 60px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -1px;
+}
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: azure;
+  filter: brightness(.3);
+  transition: brightness .7s ease;
+  animation: pulseButton 2s infinite alternate;
+}
+@keyframes pulseButton {
+  from { filter: brightness(.5);}
+  to { filter: brightness(1.25);}
+}
+.circle:hover {
+  animation: none;
+}
+.circle:active {
+  filter: brightness(1.5);
+  border: 3px solid white;
+  background-blur: 2px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.project {
+  display: flex;
+  gap: 15px;
+}
+.project-info {
+  max-width: 300px;
+}
