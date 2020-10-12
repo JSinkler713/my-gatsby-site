@@ -37,6 +37,7 @@
   overflow: hidden;
   overflow-y: scroll;
 }
+
 .phone--bottom {
   position: absolute;
   width: 101%;
@@ -79,5 +80,11 @@
   gap: 15px;
 }
 .project-info {
+  max-width: 300px;
+}
+.project-info-1 {
+  max-width: 300px;
+}
+.project-info-2 {
   max-width: 300px;
 }
