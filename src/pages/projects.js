@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react'; 
+import ProjectLayout from '../components/projectlayout'
 import { Link } from 'gatsby'
-import ProjectLayout from '../components/ProjectLayout'
 import '../phoneStyle.css'
 import { useSpring } from 'react-spring'
  
