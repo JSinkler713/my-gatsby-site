@@ -56,7 +56,7 @@
   background-color: azure;
   filter: brightness(.3);
   transition: brightness .7s ease;
-  animation: pulseButton 2s infinite alternate;
+  animation: pulseButton 1s infinite alternate;
 }
 @keyframes pulseButton {
   from { filter: brightness(.5);}

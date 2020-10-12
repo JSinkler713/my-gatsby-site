@@ -13,7 +13,7 @@ export default ()=> {
        <h1>My Projects</h1>
         <div className='projects'>
          <div className='project project1'>
-           <div className='phone'>
+           <div onClick={()=> setShow1(!show1)} className='phone'>
               <div className='phone--top'>
                 <div className='speaker'>
                 </div>
@@ -22,7 +22,7 @@ export default ()=> {
                 <video style={{width:'100%', height: '100%'}} src='https://i.imgur.com/KUHv443.mp4' autoplay='true' /> 
               </div>
               <div className='phone--bottom'>
-                <div onClick={()=> setShow1(!show1)} className='circle'>
+                <div  className='circle'>
                 </div>
               </div>
            </div>
@@ -41,7 +41,7 @@ export default ()=> {
            }
          </div>
          <div className='project project2'>
-           <div className='phone'>
+           <div onClick={()=> setShow2(!show2)} className='phone'>
               <div className='phone--top'>
                 <div className='speaker'>
                 </div>
@@ -50,7 +50,7 @@ export default ()=> {
                 <video style={{width:'100%', height: '100%'}} src='https://i.imgur.com/71bmeiy.mp4' autoplay='true' /> 
               </div>
               <div className='phone--bottom'>
-                <div onClick={()=> setShow2(!show2)} className='circle'>
+                <div  className='circle'>
                 </div>
               </div>
            </div>
