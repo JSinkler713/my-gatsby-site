@@ -75,10 +75,6 @@
   opacity: 0;
 }
 
-.project {
-  display: flex;
-  gap: 15px;
-}
 .project-info {
   max-width: 300px;
 }
@@ -87,4 +83,10 @@
 }
 .project-info-2 {
   max-width: 300px;
+}
+@media screen and (min-width: 700px) {
+  .project {
+    display: flex;
+    gap: 15px;
+  }
 }

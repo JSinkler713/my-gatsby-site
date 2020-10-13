@@ -69,7 +69,6 @@ const ProjectLayout = ({children}) => {
           margin-top: 0;
           padding-top: 0;
           height: 90vh;
-          width: 100vw;
           margin: 0px 30px;
           display: flex;
           flex-direction: column;
