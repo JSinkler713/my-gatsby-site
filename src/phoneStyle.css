@@ -84,9 +84,12 @@
 .project-info-2 {
   max-width: 300px;
 }
+.project {
+  margin-bottom: 25px;
+}
 @media screen and (min-width: 700px) {
   .project {
     display: flex;
-    gap: 15px;
+    gap: 55px;
   }
 }

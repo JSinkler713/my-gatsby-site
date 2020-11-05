@@ -5,11 +5,11 @@ import '../phoneStyle.css'
 import { useSpring } from 'react-spring'
  
 export default ()=> { 
-  const [show1, setShow1] = useState(false)
-  const [show2, setShow2] = useState(false)
+  const [show1, setShow1] = useState(true)
+  const [show2, setShow2] = useState(true)
   
   return (
-    <ProjectLayout style={{maxWidth: '800px'}}>
+   <ProjectLayout style={{maxWidth: '800px'}}>
        <h1>My Projects</h1>
         <div className='projects'>
          <div className='project project1'>
