@@ -11,6 +11,7 @@ const PostPreviewCard = ({post}) => {
       display: flex;
       margin-top: 0;
       padding-bottom: 1rem;
+      overflow-x: hidden;
 
       :first-of-type {
         margin-top: 1rem;
