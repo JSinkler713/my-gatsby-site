@@ -80,9 +80,12 @@
 }
 .project-info-1 {
   max-width: 300px;
+  font-family: 'Anonymous Pro', monospace;
 }
 .project-info-2 {
   max-width: 300px;
+  font-family: 'Anonymous Pro', monospace;
+  
 }
 .project {
   margin-bottom: 25px;
