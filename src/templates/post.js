@@ -7,6 +7,9 @@ import Layout from '../components/layout';
 import ReadLink from '../components/readlink';
 
 // this picks up from context the slug we defined
+// we have the slug passed though a forEach in gatsby=node.
+// so each pageCreated will have it's own slug
+// we handle what to do with each slug here, in out template
 export const query = graphql`
   query($slug: String){
     mdx(frontmatter: { slug: {eq: $slug}}) {
@@ -20,6 +23,7 @@ export const query = graphql`
   }
 `;
 
+// data is the result of the above graphql query
 const PostTemplate = ({ data: { mdx: post } }) => (
   <Layout>
       <Helmet>

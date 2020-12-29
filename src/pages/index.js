@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 // this has same API as reach-router
 import { Link } from 'gatsby'
 import HomeLayout from '../components/homelayout'
+import GetInTouch from '../components/getInTouch'
 import Hero from '../components/hero'
 import {useSpring, animated, useChain} from 'react-spring'
 
@@ -32,6 +33,7 @@ export default () => {
         <animated.div style={secondSpring}>
           <h3>Educator, and ever educated</h3>
           <p>Always teaching and learning new skills in my tech endeavors and beyond</p>
+          <GetInTouch />
         </animated.div>
       </HomeLayout>
     </>
