@@ -68,7 +68,7 @@ const HomeLayout = ({children}) => {
       css={css`
           margin-top: 0;
           padding-top: 0;
-          height: 90vh;
+          height: calc(100vh - 46px);
           width: 100vw;
           background-image: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
           background-repeat: no-repeat;
