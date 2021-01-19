@@ -1,0 +1,90 @@
+---
+title: bind methods
+slug: bind methods
+author: James Sinkler
+meta: 'Showing how to bind methods to objects when we try to take out a specific method'
+image: ./images/bind.jpg
+---
+
+![moving forward](./images/bind.jpg)
+<span>Photo by <a href="https://unsplash.com/@manuelsardo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Manuel Sardo</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
+Given this little object, what should game.play() return to us?
+
+```javascript
+const game = {
+  lives: 10,
+  isPlaying: false,
+  gameOver: function() {
+    return 'GAME OVER'
+  },
+  play: function(){ 
+    this.isPlaying = true
+    return `It's on! You have ${this.lives} lives.`
+  }
+}
+```
+
+We look inside the game method and see that this sets our game.lives property to true, and then returns a string, that also lets us know how many lives we have.
+
+So game.this.play() will run fine.
+
+But what if we want to export just this one method to some other file to run somewhere else. Maybe we have a pause.js file and we want to be able to access this method within it, to start back up after our play after a pause.
+
+If we do something like this we are not going to get what we want
+
+```javascript
+export const playGame = game.play
+```
+
+The problem is that on the above line, we get access to playGame the method we want, but only the inner function. Our variable playGame has no idea what `this` is anymore.
+
+Sometimes this is fine. Take for instance the other method we have in our game object. If we needed to export our gameOver function it will work just fine as is.
+
+```javascript
+export const gameOver = game.gameOver
+```
+
+But **this** is because there is no reference to **this** in this method. The method **gameOver**  doesn't need to know anything else about the object it came from.
+
+
+As an aside there's nothing particularly important about exporting like I have in my examples. It just seems this is when it comes up, because you lose sight of the object the method came from. 
+
+So if we go ahead and try these both out
+```javascript
+const game = {
+  lives: 10,
+  isPlaying: false,
+  gameOver: function() {
+    return 'GAME OVER'
+  },
+  play: function(){ 
+    this.isPlaying = true
+    return `It's on! You have ${this.lives} lives.`
+  }
+}
+
+const gameOver = game.gameOver
+console.log(gameOver()) // All good here
+
+const playGame = game.play // WE WILL CHANGE THIS
+console.log(playGame()) // Not so good
+// we need to tell it which object it should look at for the keyword this
+```
+
+So we see that we get the incorrect response on our second call. The gameOver function works fine, with no **this** referenced. But our second method returns the string `It's on! You have undefined lives`.
+
+So we change our declaration to include a bind when we make the assignment.
+
+```
+// bind it  to the game object when saving to the variable
+const playGame = game.play.bind(game) // CHANGED
+// now it prints nicely
+console.log(playGame())  
+```
+
+That's what you need to know to use the bind proptotype method. Remember if you are trying to utilize a method from an object in this way, if it has the keyword **this** than **this** is what you can do to bind it properly.
+
+Happy coding,
+
+James
