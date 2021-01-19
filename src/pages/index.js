@@ -11,8 +11,8 @@ export default () => {
   const refOne = useRef()
   const springStyle = useSpring({
     ref: refOne,
-    from: {opacity: 0, paddingTop: '6vh'},
-    to: {opacity: 1, paddingTop: '2vh'},
+    from: {opacity: 0, paddingTop: '7vh'},
+    to: {opacity: 1, paddingTop: '4vh'},
     config: { mass: 10, tension: 300, friction: 30, clamp: false}
   })
   const refTwo = useRef()
