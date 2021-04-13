@@ -37,6 +37,8 @@ export default () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "message": event.target.getAttribute("name"),
+        "form-name": event.target.getAttribute("form-name"),
+        "contact": event.target.getAttribute("contact"),
       })
     }).then(() => console.log('success')).catch(error => alert(error))
   }
