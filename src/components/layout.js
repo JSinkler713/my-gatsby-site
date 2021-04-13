@@ -67,6 +67,36 @@ const Layout = ({children}) => {
         li {
         margin-top: 0.25rem;
         }
+        .contact-form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          textarea {
+            color: #555;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.4;
+            padding: 10px;
+          }
+          input {
+            background-color: white;
+            border-radius: 5px;
+            color: #555;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.4;
+          }
+          div input {
+            margin-top: 0;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            border-radius: 2px;
+          }
+          div label {
+            font-size: 1.1em;
+          }
+
       }
       `} />
       <Helmet>

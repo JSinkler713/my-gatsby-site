@@ -4,6 +4,8 @@ import Layout from '../components/layout';
 import {useSpring, animated, useTransition} from 'react-spring'
 
 export default () => {
+  const [message, setMessage] = useState('')
+  const [contact, setContact] = useState('')
   const arrayOfWhatIAm = ['Developer', 'Teacher', 'Learner', 'Tinkerer', 'Builder', 'Problem-Solver']
   const [index, setIndex] = useState(0)
   const [items, setItems] = useState(arrayOfWhatIAm)
@@ -20,6 +22,31 @@ export default () => {
       <animated.span key={key} style={{fontSize: '.8rem'}, {fontWeight: '100'}}>{item}        </animated.span>
     )
   })
+  /* NETLIFY FORM ENCODING*/
+  function encode(data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&")
+  }
+
+  /* NETLIFY FORM SUBMISSION*/
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "message": event.target.getAttribute("name"),
+      })
+    }).then(() => console.log('success')).catch(error => alert(error))
+  }
+  const handleChangeMessage = (e)=> {
+    setMessage(e.target.value)
+  }
+  const handleChangeContact = (e)=> {
+    setContact(e.target.value)
+  }
+
 
   useEffect(()=> {
     if (index < arrayOfWhatIAm.length -1) {
@@ -42,6 +69,17 @@ export default () => {
       <div>
         <p>I hope you enjoy what you read, and get some benefit out of the articles that come to life with this project. Everything from graphQL servers to React Native may turn into a post. Thanks for joining me on my learnings and teachings.</p>
         </div>
+        <form className='contact-form' data-netlify="true" name="myForm" method="post" onSubmit={handleSubmit}>
+          <input type="hidden" name="form-name" value="myForm" />
+          <label>Leave me a message 👋!</label>
+          <textarea rows="10" cols="33" name="message" type="text" placeholder="Hey James,                                           This is yourname, looking forward to talking. Like your stuff on react!" value={message} onChange={handleChangeMessage} />
+          <div style={{display: 'flex', justifyContent: 'space-between', gap: '10px', width: 'fit-content' }}>
+            <label>Contact</label>
+          <input name="contact" type="text" placeholder="yourname@email.com" onChange={handleChangeContact}/>
+        
+          </div>
+          <input type="submit" value="Send Message"/>
+        </form>
     </Layout>
   )
 }
