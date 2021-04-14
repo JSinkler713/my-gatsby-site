@@ -6,6 +6,7 @@ import {useSpring, animated, useTransition} from 'react-spring'
 export default () => {
   const [message, setMessage] = useState('')
   const [contact, setContact] = useState('')
+  const [honey, setHoney] = useState(false)
   const arrayOfWhatIAm = ['Developer', 'Teacher', 'Learner', 'Tinkerer', 'Builder', 'Problem-Solver']
   const [index, setIndex] = useState(0)
   const [items, setItems] = useState(arrayOfWhatIAm)
@@ -32,15 +33,21 @@ export default () => {
   /* NETLIFY FORM SUBMISSION*/
   const handleSubmit = (event) => {
     event.preventDefault()
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "message": message,
-        "form-name": event.target.getAttribute("name"),
-        "contact": contact
-      })
-    }).then(() => console.log('success')).catch(error => alert(error))
+    if (!honey) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "message": message,
+          "form-name": event.target.getAttribute("name"),
+          "contact": contact
+        })
+      }).then(() => console.log('success')).catch(error => alert(error))
+    } else {
+      // what to do with a bot? Send them to youtube
+      window.location.assign("https://www.youtube.com/watch?v=ADj2jDqT4uY"); 
+    }
+
   }
   const handleChangeMessage = (e)=> {
     setMessage(e.target.value)
@@ -73,6 +80,7 @@ export default () => {
         </div>
         <form className='contact-form' data-netlify="true" name="myForm" method="post" onSubmit={handleSubmit}>
           <input type="hidden" name="form-name" value="myForm" />
+          <input type="hidden" name="honey"  onChange={()=>setHoney(true)} />
           <label>Leave me a message 👋!</label>
           <textarea rows="10" cols="33" name="message" type="text" placeholder="Hey James,                                           This is yourname, looking forward to talking. Like your stuff on react!" value={message} onChange={handleChangeMessage} />
           <div style={{display: 'flex', justifyContent: 'space-between', gap: '10px', width: 'fit-content' }}>
