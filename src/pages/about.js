@@ -6,6 +6,7 @@ import {useSpring, animated, useTransition} from 'react-spring'
 export default () => {
   const [message, setMessage] = useState('')
   const [contact, setContact] = useState('')
+  const [showSent, setShowSent] = useState(false)
   const [honey, setHoney] = useState(false)
   const arrayOfWhatIAm = ['Developer', 'Teacher', 'Learner', 'Tinkerer', 'Builder', 'Problem-Solver']
   const [index, setIndex] = useState(0)
@@ -30,6 +31,12 @@ export default () => {
         .join("&")
   }
 
+  const spring = useSpring({
+    opacity: showSent ? 1 : 0,
+    transform: showSent ? 'scale(1.25)': 'scale(1)',
+  })
+  const SentSpan = <animated.span style={spring}>SENT ✔️</animated.span>
+
   /* NETLIFY FORM SUBMISSION*/
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -42,13 +49,30 @@ export default () => {
           "form-name": event.target.getAttribute("name"),
           "contact": contact
         })
-      }).then(() => console.log('success')).catch(error => alert(error))
+      }).then(() => {
+        console.log('success')
+        // success should give a pop up all is well, and reset the form
+        setShowSent(true)
+
+      }).catch(error => alert(error))
     } else {
       // what to do with a bot? Send them to youtube
       window.location.assign("https://www.youtube.com/watch?v=ADj2jDqT4uY"); 
     }
-
   }
+  //called when showSent is updated with form submission
+  useEffect(()=> {
+    // if showSent === true
+    if (showSent) {
+    // do a little timer,
+      const timer = setTimeout(()=> {
+        // at the end set showSent back to false
+        setShowSent(false)
+      }, 2000)
+    setContact('')
+    setMessage('')
+    }
+  }, [showSent])
   const handleChangeMessage = (e)=> {
     setMessage(e.target.value)
   }
@@ -88,7 +112,7 @@ export default () => {
           <input name="contact" type="text" placeholder="yourname@email.com" onChange={handleChangeContact}/>
         
           </div>
-          <input type="submit" value="Send Message"/>
+          <input type="submit" value="Send Message"/>{SentSpan}
         </form>
     </Layout>
   )
