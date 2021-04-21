@@ -17,10 +17,6 @@ const Layout = ({children}) => {
           margin: 0;
           }
 
-          * + * {
-            margin-top: 1rem;
-            }
-
           html,
           body {
             margin: 0;
@@ -47,12 +43,6 @@ const Layout = ({children}) => {
           + * {
           margin-top: 0.5rem;
           }
-        }
-        pre {
-          background-color: #f3f3f3;
-          overflow-x: scroll;
-          border-radius: 3px;
-          padding: 5px;
         }
         a:visited, a {
           color: black;
@@ -109,8 +99,6 @@ const Layout = ({children}) => {
       css={css`
           margin: 2rem auto 4rem;
           max-width: 90vw;
-          width: 550px;
-
       `}>{children}</main>
     </>
   )
