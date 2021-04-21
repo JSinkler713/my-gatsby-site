@@ -19,23 +19,27 @@ export default () => {
     enter: { opacity: 1 },
     leave: { opacity: 0 },
   })
+
   const values = arrayOfWhatIAm.map((item, key) => {
     return(
       <animated.span key={key} style={{fontSize: '.8rem'}, {fontWeight: '100'}}>{item}        </animated.span>
     )
   })
+
+
+  /* Animate span confirming email sent */
+  const spring = useSpring({
+    opacity: showSent ? 1 : 0,
+    transform: showSent ? 'scale(1.25)': 'scale(1)',
+  })
+  const SentSpan = <animated.span style={spring}>SENT ✔️</animated.span>
+
   /* NETLIFY FORM ENCODING*/
   function encode(data) {
     return Object.keys(data)
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
         .join("&")
   }
-
-  const spring = useSpring({
-    opacity: showSent ? 1 : 0,
-    transform: showSent ? 'scale(1.25)': 'scale(1)',
-  })
-  const SentSpan = <animated.span style={spring}>SENT ✔️</animated.span>
 
   /* NETLIFY FORM SUBMISSION*/
   const handleSubmit = (event) => {
@@ -73,6 +77,7 @@ export default () => {
     setMessage('')
     }
   }, [showSent])
+
   const handleChangeMessage = (e)=> {
     setMessage(e.target.value)
   }
@@ -83,7 +88,7 @@ export default () => {
 
   useEffect(()=> {
     if (index < arrayOfWhatIAm.length -1) {
-    setTimeout(()=>setIndex(index+1), 1000)
+      setTimeout(()=>setIndex(index+1), 1000)
     }
   }, [index])
 
@@ -106,10 +111,10 @@ export default () => {
           <input type="hidden" name="form-name" value="myForm" />
           <input type="hidden" name="honey"  onChange={()=>setHoney(true)} />
           <label>Leave me a message 👋!</label>
-          <textarea rows="10" cols="33" name="message" type="text" placeholder="Hey James,                                           This is yourname, looking forward to talking. Like your stuff on react!" value={message} onChange={handleChangeMessage} />
+          <textarea rows="10" cols="33" name="message" type="text" placeholder="Hey James, Looking forward to talking. Like your stuff on react!" value={message} onChange={handleChangeMessage} />
           <div style={{display: 'flex', justifyContent: 'space-between', gap: '10px', width: 'fit-content' }}>
             <label>Contact</label>
-          <input name="contact" type="text" placeholder="yourname@email.com" onChange={handleChangeContact}/>
+          <input name="contact" type="email" value={contact} placeholder="yourname@email.com" onChange={handleChangeContact}/>
         
           </div>
           <input type="submit" value="Send Message"/>{SentSpan}
