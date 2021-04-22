@@ -24,6 +24,9 @@ const CardContent = styled.div`
   justify-content: space-between;
   gap: 10px;
   padding: 15px 10px;
+  p {
+  font-size: .75rem;
+  }
 `
 const CardWrapper = styled.div`
   border-block-start:1px solid hsl(30deg 0% 90% / 100%);
@@ -47,9 +50,14 @@ const CardWrapper = styled.div`
 `
 const LinkWrapper = styled(Link)`
   text-decoration: none;
+  color: black;
   &:hover {
     font-weight: normal
   }
+  &:visited {
+    color: black;
+  }
+
 
 `
 
@@ -74,7 +82,7 @@ const PostPreviewCard = ({post}) => {
               <h3>{post.title}</h3>
               <BreakingP>{post.excerpt}</BreakingP>
             </div>
-            <ReadLink to={post.slug}>Read this post </ReadLink>
+            <p>Continue Reading</p>
           </CardContent>
         </CardWrapper>
       </LinkWrapper>
