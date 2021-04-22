@@ -44,9 +44,6 @@ const Layout = ({children}) => {
           margin-top: 0.5rem;
           }
         }
-        a:visited, a {
-          color: black;
-        }
         a:hover {
           font-weight: 600
         }
@@ -97,7 +94,7 @@ const Layout = ({children}) => {
       <Header />
       <main
       css={css`
-          margin: 2rem auto 4rem;
+          margin: 80px auto 4rem;
           max-width: 90vw;
       `}>{children}</main>
     </>
