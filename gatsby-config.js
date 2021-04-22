@@ -25,6 +25,15 @@ module.exports = {
       path: 'posts',
     },
   },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'Poppins'
+        ],
+        display: 'swap'
+      }
+    },
   {
     resolve: 'gatsby-plugin-webpack-bundle-analyzer',
     options: {
