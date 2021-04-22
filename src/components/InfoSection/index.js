@@ -2,11 +2,11 @@ import React, {useState, useEffect, useContext} from 'react';
 import { InfoContainer, InfoWrapper, Row, Column, TextWrapper, TopLine, Heading, Subtitle, BtnWrap, ImgWrap, Img} from './InfoSectionElements'
 
 
-const InfoSection = ({lightBg, id, imgStart, lightText, topLine, headline, description, img, alt, primary, buttonLabel, dark})=> {
+const InfoSection = ({vh, lightBg, id, imgStart, lightText, topLine, headline, description, img, alt, primary, buttonLabel, dark})=> {
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
-        <InfoWrapper>
+        <InfoWrapper vh={vh}>
           <Row imgStart={imgStart}>
             <Column colNum={'1'} >
               <TextWrapper>

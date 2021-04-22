@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const InfoContainer = styled.div`
   color: #fff;
-  background: ${({lightBg}) => (lightBg ? '#f9f9f9' : '#010606')};
+  background: ${({lightBg}) => (lightBg ? 'white' : '#010606')};
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -13,12 +13,11 @@ export const InfoWrapper = styled.div`
   z-index: 1;
   /*height: calc(100vh - 80px);*/
   /*height: 800px;*/
-  height: 100vh;
-  min-height: 750px;
+  height: ${({vh})=> (vh ? vh : '100vh')};
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0px 24px;
   justify-content: center;
 `
 export const Row = styled.div`
