@@ -25,7 +25,7 @@ const HomeLayout = ({children}) => {
           body {
             margin: 0;
             color: #555;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             font-size: 18px;
             line-height: 1.4;
             
@@ -68,16 +68,8 @@ const HomeLayout = ({children}) => {
       css={css`
           margin-top: 0;
           padding-top: 0;
-          height: calc(100vh - 46px);
+          height: calc(100vh - 80px);
           width: 100vw;
-          background-image: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: center top;
-          text-align: center;
-          h1 {
-            padding-top: 20px;
-          }
       `}>{children}</main>
     </>
   )
