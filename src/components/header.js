@@ -34,6 +34,7 @@ const Header = () => (
       justify-content: space-between;
       align-items: center;
       padding: 0.5rem 2rem;
+      z-index: 2;
     `}
   >
     <NavLink fontWeight='bold' to='/'>Jsinkler Dev</NavLink>
