@@ -17,10 +17,6 @@ const HomeLayout = ({children}) => {
           margin: 0;
           }
 
-          * + * {
-            margin-top: 1rem;
-            }
-
           html,
           body {
             margin: 0;
@@ -43,10 +39,6 @@ const HomeLayout = ({children}) => {
           h6 {
           color: #222;
           line-height: 1.1;
-
-          + * {
-          margin-top: 0.5rem;
-          }
         }
 
         strong {
@@ -68,7 +60,6 @@ const HomeLayout = ({children}) => {
       css={css`
           margin-top: 0;
           padding-top: 0;
-          height: calc(100vh - 80px);
           width: 100vw;
       `}>{children}</main>
     </>
