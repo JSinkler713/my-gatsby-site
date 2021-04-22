@@ -7,7 +7,7 @@ import { Link } from 'gatsby'
 import HomeLayout from '../components/homelayout'
 import GetInTouch from '../components/getInTouch'
 import InfoSection from '../components/InfoSection'
-import { homeObjOne, homeObjTwo, homeObjThree } from '../components/InfoSection/Data'
+import { homeObjOne, blogHeader, homeObjTwo, homeObjThree } from '../components/InfoSection/Data'
 import Hero from '../components/hero'
 import {useSpring, animated, useChain} from 'react-spring'
 import { ArrowElement, UpArrow, DownArrow } from '../components/ArrowElement'
@@ -95,6 +95,7 @@ export default () => {
     <>
       <HomeLayout>
         <InfoSection  {...homeObjOne }/>
+        <InfoSection  {...blogHeader }/>
         <InfoSection  {...homeObjThree }/>
          <ArrowElement hide={hideDown} onClick={scroll100vh} smooth={true} duration={700} spy={true} exact={true}>
            <DownArrow />
