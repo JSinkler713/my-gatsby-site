@@ -5,12 +5,11 @@ import { Link } from 'gatsby';
 
 
 const NavLink = styled(Link)`
-  color: #222;
+  color: white;
   font-size: 1rem;
   font-weight: ${props => props.fontWeight || 'normal'};
   line-height: 1;
   margin: 0 0.5rem 0 0;
-  padding: 0.25rem;
   text-decoration: none;
 
   &.current-page {
@@ -25,11 +24,16 @@ const NavLink = styled(Link)`
 const Header = () => (
   <header
     css={css`
-      background: cadetblue; 
-      border-bottom: 1px solid #ddd;
+      background: black; 
+      color: white;
+      position: sticky;
+      height: 80px;
+      margin-top: -80px;
+      top: 0;
       display: flex;
       justify-content: space-between;
-      padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
+      align-items: center;
+      padding: 0.5rem 2rem;
     `}
   >
     <NavLink fontWeight='bold' to='/'>Jsinkler Dev</NavLink>
