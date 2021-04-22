@@ -12,6 +12,7 @@ export default () => {
 
   return(
       <Layout>
+        <h1 style={{marginBottom: '30px'}}>My latest posts</h1>
       <PostsWrapper>
         {posts.map(post=> (
           <pre><PostPreviewCard key={post.slug} post={post}/></pre>

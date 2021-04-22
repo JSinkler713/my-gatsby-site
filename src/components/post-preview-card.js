@@ -71,7 +71,7 @@ const PostPreviewCard = ({post}) => {
         />
           <CardContent>
             <div>
-              <h3><LinkWrapper to={post.slug}>{post.title}</LinkWrapper></h3>
+              <h3>{post.title}</h3>
               <BreakingP>{post.excerpt}</BreakingP>
             </div>
             <ReadLink to={post.slug}>Read this post </ReadLink>
