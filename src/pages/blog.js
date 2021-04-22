@@ -6,18 +6,20 @@ import Layout from '../components/layout'
 import PostsWrapper from '../components/PostsWrapper';
 import PostPreviewCard from '../components/post-preview-card'
 import usePosts from '../hooks/use-posts'
+import {blogHeader} from '../components/InfoSection/Data'
+import InfoSection from '../components/InfoSection'
 
 export default () => {
   const posts = usePosts()
 
   return(
-      <Layout>
-        <h1 style={{marginBottom: '30px'}}>My latest posts</h1>
-      <PostsWrapper>
+    <Layout style={{isolation: 'isolate'}}>
+      <InfoSection {...blogHeader } vh={'70vh'}/>
+        <PostsWrapper>
         {posts.map(post=> (
           <pre><PostPreviewCard key={post.slug} post={post}/></pre>
         ))}
-      </PostsWrapper>
+        </PostsWrapper>
       </Layout>
   )
 }
