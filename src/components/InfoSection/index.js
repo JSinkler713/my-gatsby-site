@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import { InfoContainer, InfoWrapper, Row, Column, TextWrapper, TopLine, Heading, Subtitle, Button, BtnWrap, ImgWrap, Img} from './InfoSectionElements'
 
 
-const InfoSection = ({vh, button, lightBg, mTop, id, imgStart, lightText, topLine, headline, description, img, alt, primary, buttonLabel, dark})=> {
+const InfoSection = ({vh, button, lightBg, mTop, mkSmall, id, imgStart, lightText, topLine, headline, description, img, alt, primary, buttonLabel, dark})=> {
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -20,7 +20,7 @@ const InfoSection = ({vh, button, lightBg, mTop, id, imgStart, lightText, topLin
             </Column>
             <Column colNum={'2'} >
               <ImgWrap>
-                <Img src={img} alt={alt}/>
+                <Img src={img} mkSmall={mkSmall} alt={alt}/>
               </ImgWrap>
             </Column>
           </Row>

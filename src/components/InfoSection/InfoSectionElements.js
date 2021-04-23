@@ -14,7 +14,7 @@ export const InfoWrapper = styled.div`
   z-index: 1;
   /*height: calc(100vh - 80px);*/
   /*height: 800px;*/
-  height: ${({vh})=> (vh ? vh : '100vh')};
+  min-height: ${({vh})=> (vh ? vh : '100vh')};
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -100,8 +100,8 @@ height: 100%;
 `
 
 export const Img = styled.img`
-  width: 100%;
-  height: 100%;
+  width: ${({mkSmall}) => (mkSmall ? '65%' : '95%')};
+  height: 80%;
   margin: 0 0 10px 0;
   @media (max-width: 768px) {
     width: 60%;
