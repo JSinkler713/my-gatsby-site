@@ -6,8 +6,9 @@ import ScrollListener from 'react-scroll-listener'
 import { Link } from 'gatsby'
 import HomeLayout from '../components/homelayout'
 import GetInTouch from '../components/getInTouch'
+import ContactForm from '../components/ContactForm'
 import InfoSection from '../components/InfoSection'
-import { homeObjOne, blogHeader, homeObjTwo, homeObjThree } from '../components/InfoSection/Data'
+import { blogReference, homeObjOne, blogHeader, homeObjTwo, homeObjThree } from '../components/InfoSection/Data'
 import Hero from '../components/hero'
 import {useSpring, animated, useChain} from 'react-spring'
 import { ArrowElement, UpArrow, DownArrow } from '../components/ArrowElement'
@@ -95,8 +96,9 @@ export default () => {
     <>
       <HomeLayout>
         <InfoSection  {...homeObjOne }/>
-        <InfoSection  {...blogHeader }/>
+        <InfoSection  {...blogReference }/>
         <InfoSection  {...homeObjThree }/>
+        <ContactForm/>
          <ArrowElement hide={hideDown} onClick={scroll100vh} smooth={true} duration={700} spy={true} exact={true}>
            <DownArrow />
          </ArrowElement >
