@@ -95,7 +95,7 @@ export default () => {
   return(
     <>
       <HomeLayout>
-        <InfoSection  {...homeObjOne }/>
+        <InfoSection mkSmall={true} {...homeObjOne }/>
         <InfoSection  {...blogReference }/>
         <InfoSection  {...homeObjThree }/>
         <ContactForm/>
