@@ -66,9 +66,9 @@ const ProjectLayout = ({children}) => {
       <Header />
       <main
       css={css`
-          margin-top: 0;
-          padding-top: 0;
-          height: 90vh;
+          margin-top: 80px;
+          padding-top: 20px;
+          min-height: calc(100vh - 80px);
           margin: 0px 30px;
           display: flex;
           flex-direction: column;

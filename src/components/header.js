@@ -36,6 +36,10 @@ const Header = () => (
       align-items: center;
       padding: 0.5rem 2rem;
       z-index: 2;
+      @media screen and (max-width: 565px) {
+        /* going to need to show a hamburger menu */
+        display: none;
+      }
     `}
   >
     <NavLink fontWeight='bold' to='/'>Jsinkler Dev</NavLink>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'; 
-import ProjectLayout from '../components/projectlayout'
+import HomeLayout from '../components/homelayout'
 import { Link } from 'gatsby'
 import '../phoneStyle.css'
 import { useSpring } from 'react-spring'
@@ -9,8 +9,7 @@ export default ()=> {
   const [show2, setShow2] = useState(true)
   
   return (
-   <ProjectLayout style={{maxWidth: '800px'}}>
-       <h1>My Projects</h1>
+   <HomeLayout style={{maxWidth: '800px'}}>
         <div className='projects'>
          <div className='project project1'>
            <div onClick={()=> setShow1(!show1)} className='phone'>
@@ -71,6 +70,6 @@ export default ()=> {
            }
          </div>
         </div>
-    </ProjectLayout>
+    </HomeLayout>
   ) 
 } 

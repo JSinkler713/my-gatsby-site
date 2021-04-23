@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'gatsby'
-import Layout from '../components/layout';
+import HomeLayout from '../components/homelayout';
 import {useSpring, animated, useTransition} from 'react-spring'
 
 export default () => {
@@ -93,7 +93,7 @@ export default () => {
   }, [index])
 
   return (
-    <Layout>
+    <HomeLayout>
       <h1>James Sinkler</h1>
       <br/>
       { values }
@@ -119,7 +119,7 @@ export default () => {
           </div>
           <input type="submit" value="Send Message"/>{SentSpan}
         </form>
-    </Layout>
+    </HomeLayout>
   )
 }
 

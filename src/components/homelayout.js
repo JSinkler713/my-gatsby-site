@@ -58,7 +58,7 @@ const HomeLayout = ({children}) => {
       <Header />
       <main
       css={css`
-          margin-top: 0;
+          margin-top: 80px;
           padding-top: 0;
           width: 100vw;
       `}>{children}</main>
