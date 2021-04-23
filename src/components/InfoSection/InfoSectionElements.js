@@ -54,6 +54,7 @@ export const TopLine = styled.p`
 export const Heading = styled.h1`
   font-size: 3rem;
   line-height: 1.1;
+  margin-left: -1.5px;
   font-weight: 600;
   color: ${({ lightText }) => (lightText ? '#f7f7f7' : '#010606')};
 
@@ -95,6 +96,7 @@ export const Button = styled(Link)`
 `
 
 export const ImgWrap = styled.div`
+text-align: center;
 max-width: 555px;
 height: 100%;
 `
