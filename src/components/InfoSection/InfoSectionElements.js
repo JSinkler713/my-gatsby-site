@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 
 export const InfoContainer = styled.div`
   color: #fff;
@@ -17,6 +18,7 @@ export const InfoWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: ${({mTop})=> (mTop ? '80px': '0px')};
   padding: 0px 24px;
   justify-content: center;
 `
@@ -42,6 +44,7 @@ export const TextWrapper = styled.div`
 `
 export const TopLine = styled.p`
   color: #01bf71;
+  /* color:hsl(23deg 96% 54%); */
   font-size: 1rem;
   line-height: 1rem;
   letter-spacing: 1.3;
@@ -68,6 +71,27 @@ export const Subtitle = styled.p`
 `
 export const BtnWrap = styled.div`
 display: flex;
+`
+export const Button = styled(Link)`
+  border-radius: 50px;
+  background: ${({primary}) => (primary ? '#01BF71' : '#010606')};
+  white-space: nowrap;
+  padding: ${({big}) => (big ? '14px 48px' : '12px 30px')};
+  color: ${({dark}) => (dark ? '#fff' : '#010606')};
+  font-size: ${({fontBig})=> (fontBig ? '20px': '16px')};
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    filter: saturate(1.5) ;*/
+    /*background: ${({primary})=> (primary ? '#fff' : '#01BF71')};*/
+  }
 `
 
 export const ImgWrap = styled.div`
