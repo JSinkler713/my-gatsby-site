@@ -13,7 +13,8 @@ const NavLink = styled(Link)`
   text-decoration: none;
 
   &.current-page {
-    border-bottom: 2px solid #222;
+    border-bottom: 2px solid #01bf71;
+  /*color: #01bf71;*/
   }
 
   &:last-of-type {
@@ -40,7 +41,7 @@ const Header = () => (
     <NavLink fontWeight='bold' to='/'>Jsinkler Dev</NavLink>
     {/* site name */}
     {/* nav */}
-    <nav css={css` margin-top: 0;`}>
+    <nav css={css`display: flex; gap:30px; margin-top: 0;`}>
       <NavLink to='/' activeClassName='current-page'>Home</NavLink>
       <NavLink to='/about/' activeClassName='current-page'>About</NavLink>
       <NavLink to='/blog/' activeClassName='current-page'>Blog</NavLink>
