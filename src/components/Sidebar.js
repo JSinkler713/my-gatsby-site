@@ -78,6 +78,9 @@ const Sidebar = ({toggleOpen, isOpen}) => {
          <SidebarLink onClick={toggleOpen} to='/about/' smooth={true} duration={700} delay={300} spy={true} exact={true}>
            About
          </SidebarLink>
+         <SidebarLink onClick={toggleOpen} to='/blog/'>
+           Blog
+         </SidebarLink>
          <SidebarLink onClick={toggleOpen} to='/projects/' smooth={true} duration={700} delay={300} spy={true} exact={true}>
            Projects
          </SidebarLink>
