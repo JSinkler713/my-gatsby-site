@@ -16,7 +16,6 @@ import { ArrowElement, UpArrow, DownArrow } from '../components/ArrowElement'
 const scroll = Scroll.animateScroll
 
 export default () => {
-
   const [isOpen, setIsOpen] = useState(false)
   const [currentActive, setCurrentActive] = useState('about')
   const [hideDown, setHideDown] = useState(false)
@@ -41,6 +40,7 @@ export default () => {
     }
 
   }, [])
+
 
   const handleScroll = () => {
     console.log('handling scroll')
@@ -94,7 +94,7 @@ export default () => {
   
   return(
     <>
-      <HomeLayout>
+      <HomeLayout isOpen={isOpen} toggleOpen={toggleOpen}>
         <InfoSection mkSmall={true} vh={`calc(100vh - 80px)`} {...homeObjOne }/>
         <InfoSection  {...blogReference }/>
         <InfoSection  {...homeObjThree }/>
