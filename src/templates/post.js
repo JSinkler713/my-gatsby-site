@@ -3,8 +3,9 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby';
 import { css } from '@emotion/core';
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import Layout from '../components/layout';
+import HomeLayout from '../components/homelayout';
 import ReadLink from '../components/readlink';
+import useIsOpen from '../hooks/use-isOpen';
 
 // this picks up from context the slug we defined
 // we have the slug passed though a forEach in gatsby=node.
@@ -24,8 +25,10 @@ export const query = graphql`
 `;
 
 // data is the result of the above graphql query
-const PostTemplate = ({ data: { mdx: post } }) => (
-  <Layout>
+const PostTemplate = ({ data: { mdx: post } }) => {
+  const [isOpen, toggleOpen] = useIsOpen()
+  return (
+  <HomeLayout isOpen={isOpen} toggleOpen={toggleOpen}>
       <Helmet>
         <html lang='en' />
         <title>{post.frontmatter.title}</title>
@@ -35,7 +38,8 @@ const PostTemplate = ({ data: { mdx: post } }) => (
     <p css={css`font-size: 0.75rem`}>{post.frontmatter.author}</p>
     <MDXRenderer>{post.body}</MDXRenderer>
     <ReadLink to='/'>Back to Home</ReadLink>
-  </Layout>
-)
+  </HomeLayout>
+  )
+}
 
 export default PostTemplate;

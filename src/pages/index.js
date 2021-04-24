@@ -10,13 +10,14 @@ import ContactForm from '../components/ContactForm'
 import InfoSection from '../components/InfoSection'
 import { blogReference, homeObjOne, blogHeader, homeObjTwo, homeObjThree } from '../components/InfoSection/Data'
 import Hero from '../components/hero'
-import {useSpring, animated, useChain} from 'react-spring'
 import { ArrowElement, UpArrow, DownArrow } from '../components/ArrowElement'
+import {useSpring, animated, useChain} from 'react-spring'
+import useIsOpen from '../hooks/use-isOpen';
 
 const scroll = Scroll.animateScroll
 
 export default () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, toggleOpen] = useIsOpen()
   const [currentActive, setCurrentActive] = useState('about')
   const [hideDown, setHideDown] = useState(false)
   const [hideUp, setHideUp] = useState(true)
@@ -58,9 +59,6 @@ export default () => {
     }
   }
 
-  const toggleOpen = ()=> {
-    setIsOpen(!isOpen)
-  }
   const scroll100vh = (event)=> {
     let height = window.innerHeight
     console.log(height)

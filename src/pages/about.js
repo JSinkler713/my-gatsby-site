@@ -2,8 +2,10 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'gatsby'
 import HomeLayout from '../components/homelayout';
 import {useSpring, animated, useTransition} from 'react-spring'
+import useIsOpen from '../hooks/use-isOpen';
 
 export default () => {
+  const [isOpen, toggleOpen] = useIsOpen()
   const [message, setMessage] = useState('')
   const [contact, setContact] = useState('')
   const [showSent, setShowSent] = useState(false)
@@ -85,7 +87,6 @@ export default () => {
     setContact(e.target.value)
   }
 
-
   useEffect(()=> {
     if (index < arrayOfWhatIAm.length -1) {
       setTimeout(()=>setIndex(index+1), 1000)
@@ -93,7 +94,7 @@ export default () => {
   }, [index])
 
   return (
-    <HomeLayout>
+    <HomeLayout isOpen={isOpen} toggleOpen={toggleOpen}>
       <h1>James Sinkler</h1>
       <br/>
       { values }

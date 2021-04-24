@@ -3,13 +3,15 @@ import HomeLayout from '../components/homelayout'
 import { Link } from 'gatsby'
 import '../phoneStyle.css'
 import { useSpring } from 'react-spring'
+import useIsOpen from '../hooks/use-isOpen';
  
 export default ()=> { 
   const [show1, setShow1] = useState(true)
   const [show2, setShow2] = useState(true)
-  
+  const [isOpen, toggleOpen] = useIsOpen()
+
   return (
-   <HomeLayout style={{maxWidth: '800px'}}>
+   <HomeLayout isOpen={isOpen} toggleOpen={toggleOpen} style={{maxWidth: '800px'}}>
         <div className='projects'>
          <div className='project project1'>
            <div onClick={()=> setShow1(!show1)} className='phone'>
