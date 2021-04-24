@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Global, css } from '@emotion/core';
 import Helmet from 'react-helmet'
 import Header from './header';
+import Sidebar from './Sidebar';
 import useSiteMetadata from '../hooks/use-sitemetadata';
 
-const HomeLayout = ({children}) => {
+const HomeLayout = ({children, toggleOpen, isOpen}) => {
   // desctructuring to those two values returned in the object
   const { title, description } = useSiteMetadata()
 
@@ -55,7 +56,8 @@ const HomeLayout = ({children}) => {
         <title>{title}</title>
         <meta name='description' content={description} />
       </Helmet>
-      <Header />
+      <Header toggleOpen={toggleOpen} />
+      <Sidebar isOpen={isOpen} toggleOpen={toggleOpen} />
       <main
       css={css`
           margin-top: 80px;
