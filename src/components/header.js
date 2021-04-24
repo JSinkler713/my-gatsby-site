@@ -2,6 +2,31 @@ import React from 'react';
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { Link } from 'gatsby';
+import { FaBars } from 'react-icons/fa'
+
+const MobileIcon = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    top: 0;
+    right: 0;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+`
+const NavLinkWrapper = styled.nav`
+display: flex;
+gap: 30px;
+margin-top: 0;
+
+ @media screen and (max-width: 768px) {
+   display: none;
+ }
+
+`
 
 
 const NavLink = styled(Link)`
@@ -22,7 +47,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Header = () => (
+const Header = ({toggleOpen}) => (
   <header
     css={css`
       background: black; 
@@ -45,12 +70,15 @@ const Header = () => (
     <NavLink fontWeight='bold' to='/'>Jsinkler Dev</NavLink>
     {/* site name */}
     {/* nav */}
-    <nav css={css`display: flex; gap:30px; margin-top: 0;`}>
+    <NavLinkWrapper>
       <NavLink to='/' activeClassName='current-page'>Home</NavLink>
       <NavLink to='/about/' activeClassName='current-page'>About</NavLink>
       <NavLink to='/blog/' activeClassName='current-page'>Blog</NavLink>
       <NavLink to='/projects/' activeClassName='current-page'>Projects</NavLink>
-    </nav>
+    </NavLinkWrapper>
+    <MobileIcon onClick={toggleOpen}>
+      <FaBars />
+    </MobileIcon>
   </header>
 )
 
