@@ -1,13 +1,111 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'gatsby'
 import HomeLayout from '../components/homelayout';
+import messageImg from '../components/InfoSection/svg-5.svg'; 
+import GetInTouch from '../components/GetInTouch'
+import styled from '@emotion/styled';
+import { TwoColumnContainer, TwoColumnWrapper, Row, Column } from '../components/TwoColumn/TwoColumnElements'
 import {useSpring, animated, useTransition} from 'react-spring'
 import useIsOpen from '../hooks/use-isOpen';
+
+const TextWrapper = styled.div`
+  max-width: 540px;
+  padding: 0 0 60px 0;
+  text-align: center;
+`
+const SocialDiv = styled.div`
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
+const TopLine = styled.p`
+  color: #01bf71;
+  /* color:hsl(23deg 96% 54%); */
+  font-size: 1rem;
+  line-height: 1rem;
+  letter-spacing: 1.3;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+`
+const Heading = styled.h1`
+  font-size: 2rem;
+  line-height: 1.1;
+  margin-left: -1.5px;
+  font-weight: 600;
+  color: ${({ lightText }) => (lightText ? '#f7f7f7' : '#010606')};
+
+  @media screen and (max-width: 480px;) {
+   font-size: 2rem;
+  }
+`
+const Info = styled.p`
+  max-width: 440px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 20px 0;
+  color: #fff;
+  color: ${({ lightText }) => (lightText ? '#f7f7f7' : '#010606')};
+`
+const MyForm = styled.form`
+  max-width: 440px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 20px 0;
+  color: #fff;
+  color: ${({ lightText }) => (lightText ? '#f7f7f7' : '#010606')};
+`
+const MyTextArea = styled.textarea`
+width: 100%;
+`
+const MyInput = styled.input`
+width: 47%;
+`
+const Button = styled.input`
+  margin-top: 4px;
+  border-radius: 50px;
+  background: #01BF71;
+  white-space: nowrap;
+  padding: 12px 30px;
+  color: '#010606';
+  font-size: 18px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    filter: saturate(1.5) ;
+    color: white;
+    background: #01BF71;
+  }
+`
+const ImgWrap = styled.div`
+text-align: center;
+max-width: 400px;
+height: 100%;
+`
+
+const Img = styled.img`
+  margin: 0 0 10px 0;
+  padding-top: 30px;
+  width: 100%;
+  @media (max-width: 768px) {
+    width: 60%;
+    height: 60%;
+  }
+`
+
 
 export default () => {
   const [isOpen, toggleOpen] = useIsOpen()
   const [message, setMessage] = useState('')
   const [contact, setContact] = useState('')
+  const [name, setName] = useState('')
   const [showSent, setShowSent] = useState(false)
   const [honey, setHoney] = useState(false)
   const arrayOfWhatIAm = ['Developer', 'Teacher', 'Learner', 'Tinkerer', 'Builder', 'Problem-Solver']
@@ -53,7 +151,8 @@ export default () => {
         body: encode({
           "message": message,
           "form-name": event.target.getAttribute("name"),
-          "contact": contact
+          "contact": contact,
+          "name": name
         })
       }).then(() => {
         console.log('success')
@@ -77,6 +176,7 @@ export default () => {
       }, 2000)
     setContact('')
     setMessage('')
+    setName('')
     }
   }, [showSent])
 
@@ -86,6 +186,9 @@ export default () => {
   const handleChangeContact = (e)=> {
     setContact(e.target.value)
   }
+  const handleChangeName = (e)=> {
+    setName(e.target.value)
+  }
 
   useEffect(()=> {
     if (index < arrayOfWhatIAm.length -1) {
@@ -94,33 +197,60 @@ export default () => {
   }, [index])
 
   return (
+    <>
     <HomeLayout isOpen={isOpen} toggleOpen={toggleOpen}>
-      <h1>James Sinkler</h1>
-      <br/>
-      { values }
-      <p>Welcome to my personal website!</p>
+      <TwoColumnContainer >
+        <TwoColumnWrapper>
+          <Row>
+            <Column id={1}>
+      <TopLine>James Sinkler</TopLine>
+      <Heading>Hey I'm James!</Heading>
       <div>
-        <p>I build full-stack applications with React, node.js and SQL databases. I enjoy problem solving and seeing projects come to life. I've taught Math in my previous life, enjoy talking code, or solving puzzles. I've studied coding on my own, then online at Udacity, and most recently at General Assembly's Software Engineering Immersive. I enjoy improving my skills and continuing to learn from others. </p>
+        <Info>I build full-stack applications with React, node.js and SQL/NoSQL backends. I enjoy problem solving and seeing projects come to life.</Info><Info>I've studied coding through my degree in Mathematics, then on my own, and most recently at General Assembly's Software Engineering Immersive.</Info><Info>I went on to teach at General Assembly shortly after graduating, combining my experience as an educator with my skills in javascript, React, node, python, and more.</Info><Info>I enjoy improving my skills and continuing to learn from others. </Info>
       </div>
-      <div>
-        <p>I plan to use this site to help others build out their skills as I continue to build out mine. There are a lot of tutorials, and lessons that I have benefited from as I've learned, and I want to contribute back to the dev community with my own gatherings of knowledge. I plan to cover things ranging from Hash Maps in Coding challenges, to React Hooks and how to implement the useContext() hook. Some things I will have more expertise in, and others I will be sharing my own new learning.</p>
-      </div>
-      <div>
-        <p>I hope you enjoy what you read, and get some benefit out of the articles that come to life with this project. Everything from graphQL servers to React Native may turn into a post. Thanks for joining me on my learnings and teachings.</p>
-        </div>
+            </Column>
+            <Column id={2}>
+              <Info>There are a lot of tutorials, and lessons that I have benefited from as I've learned, and I want to contribute back to the dev community with my own knowledge.</Info>
+            </Column>
+          </Row>
+          <Row>
+            <Column>
+        <TopLine>Leave me a message 👋</TopLine>
         <form className='contact-form' data-netlify="true" name="myForm" method="post" onSubmit={handleSubmit}>
-          <input type="hidden" name="form-name" value="myForm" />
+          <input type="hidden" name="form-name" value="myForm"/>
           <input type="hidden" name="honey"  onChange={()=>setHoney(true)} />
-          <label>Leave me a message 👋!</label>
-          <textarea rows="10" cols="33" name="message" type="text" placeholder="Hey James, Looking forward to talking. Like your stuff on react!" value={message} onChange={handleChangeMessage} />
-          <div style={{display: 'flex', justifyContent: 'space-between', gap: '10px', width: 'fit-content' }}>
-            <label>Contact</label>
-          <input name="contact" type="email" value={contact} placeholder="yourname@email.com" onChange={handleChangeContact}/>
-        
+          <div style={{marginBottom: '10px', display: 'flex', justifyContent: 'space-between' }}>
+          <MyInput required data-error='Please add a name' name="name" type="text" value={name} placeholder="Name" onChange={handleChangeName}/>
+          <MyInput required name="contact" type="email" value={contact} placeholder="Email" onChange={handleChangeContact}/>
           </div>
-          <input type="submit" value="Send Message"/>{SentSpan}
+          <MyTextArea required rows="10" cols="33" name="message" type="text" placeholder="Your Message" value={message} onChange={handleChangeMessage} />
+        
+          <Button type="submit" value="Send Message"/>{SentSpan}
         </form>
+            </Column>
+            <Column>
+            <Info>I plan to cover things ranging from Hash Maps in Coding challenges, to React Hooks and how to implement the useContext() hook. Some things I will have more expertise in, and others I will be sharing my own new learning.</Info>
+            </Column>
+          </Row>
+        </TwoColumnWrapper>
+        <TwoColumnWrapper style={{ background: '#010606'}} vh={'300px'}>
+          <Row>
+            <Column>
+              <TextWrapper>
+                <Heading lightText={true}>Get In Touch</Heading>
+                <GetInTouch />
+              </TextWrapper>
+            </Column>
+            <Column>
+              <ImgWrap>
+                <Img src={messageImg}/>
+                </ImgWrap>
+            </Column>
+          </Row>
+      </TwoColumnWrapper>
+      </TwoColumnContainer>
     </HomeLayout>
+    </>
   )
 }
 
