@@ -8,7 +8,8 @@ import HomeLayout from '../components/homelayout'
 import GetInTouch from '../components/getInTouch'
 import ContactForm from '../components/ContactForm'
 import InfoSection from '../components/InfoSection'
-import { blogReference, homeObjOne, blogHeader, homeObjTwo, homeObjThree } from '../components/InfoSection/Data'
+import FooterContact from '../components/Footer-Contact'
+import { blogReference, homeObjOne, blogHeader, aboutReference, homeObjTwo, homeObjThree } from '../components/InfoSection/Data'
 import Hero from '../components/hero'
 import { ArrowElement, UpArrow, DownArrow } from '../components/ArrowElement'
 import {useSpring, animated, useChain} from 'react-spring'
@@ -45,9 +46,9 @@ export default () => {
 
   const handleScroll = () => {
     console.log('handling scroll')
-    let lastElTop = document.querySelector('#portfolio').getBoundingClientRect()
+    let lastElTop = document.querySelector('#contact').getBoundingClientRect()
     console.log(lastElTop)
-    if (lastElTop.y < 200){
+    if (lastElTop.bottom < 900){
       //we need to reverse the arrow,
       setHideDown(true)
       setHideUp(false)
@@ -96,7 +97,8 @@ export default () => {
         <InfoSection mkSmall={true} vh={`calc(100vh - 80px)`} {...homeObjOne }/>
         <InfoSection  {...blogReference }/>
         <InfoSection  {...homeObjThree }/>
-        <ContactForm/>
+        <InfoSection  {...aboutReference }/>
+        <FooterContact id='contact' fullBleed={true} />
          <ArrowElement hide={hideDown} onClick={scroll100vh} smooth={true} duration={700} spy={true} exact={true}>
            <DownArrow />
          </ArrowElement >
