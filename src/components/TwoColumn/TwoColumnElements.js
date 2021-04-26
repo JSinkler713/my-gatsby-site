@@ -27,6 +27,11 @@ export const Row = styled.div`
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
+  @media screen and (max-width: 768px) {
+    grid-template-columns:  1fr;
+    gap: 5px;
+    padding-top: 40px;
+  }
 `
 export const Column = styled.div`
   margin-bottom: 15px;
