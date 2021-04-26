@@ -5,7 +5,7 @@ import ScrollListener from 'react-scroll-listener'
 // this has same API as reach-router
 import { Link } from 'gatsby'
 import HomeLayout from '../components/homelayout'
-import GetInTouch from '../components/getInTouch'
+import GetInTouch from '../components/GetInTouch'
 import ContactForm from '../components/ContactForm'
 import InfoSection from '../components/InfoSection'
 import FooterContact from '../components/Footer-Contact'
