@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import messageImg from './InfoSection/svg-5.svg'; 
-import GetInTouch from './getInTouch'
+import GetInTouch from './GetInTouch'
 import styled from '@emotion/styled';
 import { TwoColumnContainer, TwoColumnWrapper, Row, Column } from './TwoColumn/TwoColumnElements'
 
