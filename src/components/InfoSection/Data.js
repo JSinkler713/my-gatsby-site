@@ -1,6 +1,7 @@
 // have some data for my reusable components
 
 import imgOne from './me.png'
+import imgFour from './svg-4.svg'
 import imgTwo from './svg-2.svg'
 import imgThree from './svg-3.svg'
 
@@ -21,6 +22,23 @@ export const homeObjOne = {
   darkText: false
 }
 
+export const aboutReference = {
+  id: 'about',
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
+  topLine: 'James Sinkler',
+  headline: 'Software Engineer',
+  description: "Learn more about my background and what I do",
+  buttonLabel: 'About Me',
+  imgStart: true,
+  button: '/about/',
+  img: imgFour,
+  alt: 'Car',
+  dark: false,
+  primary: true,
+  darkText: true
+}
 export const homeObjTwo = {
   id: 'blog',
   lightBg: true,

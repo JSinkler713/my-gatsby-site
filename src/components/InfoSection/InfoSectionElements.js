@@ -4,9 +4,11 @@ import { Link } from 'gatsby';
 export const InfoContainer = styled.div`
   color: #fff;
   background: ${({lightBg}) => (lightBg ? 'white' : '#010606')};
+  padding-top: 20px;
 
   @media screen and (max-width: 768px) {
-    padding: 100px 0;
+  /* TODO: fix this */
+    padding: 10px 0;
   }
 `
 export const InfoWrapper = styled.div`
