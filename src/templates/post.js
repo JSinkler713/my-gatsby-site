@@ -28,7 +28,7 @@ const BlogContainer = styled.div`
 `
 const BlogWrapper = styled.div`
   width: 100%;
-  padding: 0 20px;
+  padding: 20px 20px 40px;
 `
 
 //make a styles h3
@@ -104,7 +104,7 @@ export const query = graphql`
 const PostTemplate = ({ data: { mdx: post } }) => {
   const [isOpen, toggleOpen] = useIsOpen()
   return (
-  <HomeLayout isOpen={isOpen} toggleOpen={toggleOpen}>
+    <HomeLayout style={{marginBottom: '40px' }} isOpen={isOpen} toggleOpen={toggleOpen}>
     <BlogContainer>
     <BlogWrapper>
       <Helmet>
