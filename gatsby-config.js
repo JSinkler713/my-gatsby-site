@@ -5,9 +5,11 @@ module.exports = {
   },
   plugins: ['gatsby-plugin-emotion', 
     'gatsby-plugin-image',
-  'gatsby-plugin-react-helmet',
-  'gatsby-transformer-sharp',
-  'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-postcss',
+
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
