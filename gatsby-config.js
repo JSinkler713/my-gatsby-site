@@ -4,6 +4,7 @@ module.exports = {
     description: 'A site powered by Gatsby and React, built by James Sinkler'
   },
   plugins: ['gatsby-plugin-emotion', 
+    'gatsby-plugin-image',
   'gatsby-plugin-react-helmet',
   'gatsby-transformer-sharp',
   'gatsby-plugin-sharp',

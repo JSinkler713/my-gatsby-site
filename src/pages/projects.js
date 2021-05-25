@@ -12,6 +12,8 @@ export default ()=> {
 
   return (
    <HomeLayout isOpen={isOpen} toggleOpen={toggleOpen} style={{maxWidth: '800px'}}>
+     <p>Hello</p>
+     {/*
         <div className='projects'>
          <div className='project project1'>
            <div onClick={()=> setShow1(!show1)} className='phone'>
@@ -72,6 +74,8 @@ export default ()=> {
            }
          </div>
         </div>
+      */}
+
     </HomeLayout>
   ) 
 } 
