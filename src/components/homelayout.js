@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Global, css } from '@emotion/core';
+import {Global, css } from '@emotion/react';
 import Helmet from 'react-helmet'
 import Header from './header';
 import Sidebar from './Sidebar';

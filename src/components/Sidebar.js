@@ -1,7 +1,7 @@
 //TODO: Replace this copy of header w/ one for smaller screens w/ hamburger
 import React from 'react';
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { Link } from 'gatsby';
 import { FaTimes } from 'react-icons/fa'
 
