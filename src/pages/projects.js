@@ -9,6 +9,22 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import {  FaGithub, FaLinkedin } from 'react-icons/fa'
 import WeatherIcon  from '../project-assets/weather-icon.png'
+
+const Title = styled.h1`
+  position: absolute;
+  text-shadow: 1px 1px black;
+  z-index: 1;
+  top: 300px;
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  text-align: center;
+  color: white;
+  font-size: 64px;
+  @media (max-width: 708px) {
+  top: 100px;
+  }
+`
  
 const RepoLink = styled.a`
   color: black;
@@ -50,6 +66,10 @@ const IconWrapper = styled.span`
 const SideBySide = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
+
+@media (max-width: 768px) {
+ grid-template-columns: 1fr;
+
 `
 
 const LeftSide = styled.div`
@@ -87,6 +107,10 @@ width: 100%;
  }
 `
 
+const BottomContentWrapper = styled.div`
+padding: 0px 10px;
+line-height: 1.8;
+`
 
 const AppDescPara = styled.p`
 font-size: 16px;
@@ -106,20 +130,8 @@ export default ()=> {
         placeholder="blurred"
         layout="fullWidth"
       />
-      <h1
-      css={css`
-          position: absolute;
-          text-shadow: 1px 1px black;
-          z-index: 1;
-          top: 300px;
-          right: 0px;
-          left: 0px;
-          margin: auto;
-          text-align: center;
-          color: white;
-          font-size: 64px;
-        `}
-        >Weather Report</h1>
+      <Title
+        >Weather Report</Title>
      <SideBySide>
        <LeftSide style={{justifyContent: 'space-between'}}>
          <div>
@@ -149,7 +161,7 @@ export default ()=> {
           <LeftSide style={{padding: '6px'}}>
             <StaticImage
               src="../project-assets/icons.png"
-              alt="A dinosaur"
+              alt="icons designed in figma"
               placeholder="blurred"
               />
           </LeftSide>
@@ -162,7 +174,7 @@ export default ()=> {
        </LeftSide>
        <StaticImage
         src="../project-assets/computer-weather.png"
-        alt="A dinosaur"
+        alt="weather report on a laptop screen"
         placeholder="blurred"
         layout="fullWidth"
       />
@@ -177,84 +189,20 @@ export default ()=> {
         <LeftSide>
             <StaticImage
               src="../project-assets/sky-gradients.png"
-              alt="hands holding weather app"
+              alt="gradients designed in figma"
               placeholder="blurred"
               layout="constrained"
             />
         </LeftSide>
-          <div>
+          <BottomContentWrapper>
             <AppDescPara style={{marginTop: '10px', marginBottom: '10px',}}>
-            With a host of custom functions utilizing <CoolFeature>Styled Components</CoolFeature> in <CoolFeature>React</CoolFeature>. The emphasis was on a clean user-experience, with a mobile friendly first design.
+              With a host of custom functions utilizing <CoolFeature>Styled Components</CoolFeature> in <CoolFeature>React</CoolFeature>. The emphasis was on a clean user-experience, with a <CoolFeature>mobile first</CoolFeature> design.
             </AppDescPara>
             <AppDescPara>
               We wanted to minimize user struggle, so implementing the "Use Current Location" and the autocomplete was key for minimizing user errors.
             </AppDescPara>
-          </div>
+          </BottomContentWrapper>
       </SideBySide>
-
-     {/*
-        <div className='projects'>
-         <div className='project project1'>
-           <div onClick={()=> setShow1(!show1)} className='phone'>
-              <div className='phone--top'>
-                <div className='speaker'>
-                </div>
-              </div>
-              <div className='phone--content'>
-                <video style={{width:'100%', height: '100%'}} src='https://i.imgur.com/KUHv443.mp4' autoplay='true' /> 
-              </div>
-              <div className='phone--bottom'>
-                <div  className='circle'>
-                </div>
-              </div>
-           </div>
-           { show1?
-           <div className='project-info-1'>
-             <h2>Weather-Report</h2>
-             <p>React Project, using an external weather API, parsing over 10,000 lines of weather data, filtered down to a human readable 5 day forecast.</p>
-             <h3>Tech</h3>
-             <ul>
-               <li>React</li>
-               <li>OpenWeatherMap API</li>
-               <li>ES-6 Javascript</li>
-             </ul>
-           </div>
-           : ''
-           }
-         </div>
-         <div className='project project2'>
-           <div onClick={()=> setShow2(!show2)} className='phone'>
-              <div className='phone--top'>
-                <div className='speaker'>
-                </div>
-              </div>
-              <div className='phone--content'>
-                <video style={{width:'100%', height: '100%'}} src='https://i.imgur.com/71bmeiy.mp4' autoplay='true' /> 
-              </div>
-              <div className='phone--bottom'>
-                <div  className='circle'>
-                </div>
-              </div>
-           </div>
-           { show2?
-           <div className='project-info-2'>
-             <h2>MovieReels</h2>
-             <p>A FullStack project, built with node, express, SQL on the backend. On the front-end using React. Created to help people remember and share the movies they love.</p>
-             <h3>Tech</h3>
-             <ul>
-               <li>React</li>
-               <li>OMDP API</li>
-               <li>ES-6 Javascript</li>
-               <li>SQL, using SQLite</li>
-               <li>Express, Node.js</li>
-             </ul>
-           </div>
-           : ''
-           }
-         </div>
-        </div>
-      */}
-
     </HomeLayout>
   ) 
 } 
