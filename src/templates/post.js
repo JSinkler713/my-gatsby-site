@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 import styled  from '@emotion/styled'
