@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import HomeLayout from '../components/homelayout';
 import messageImg from '../components/InfoSection/svg-5.svg'; 
 import GetInTouch from '../components/GetInTouch'
@@ -111,6 +111,20 @@ export default () => {
   const arrayOfWhatIAm = ['Developer', 'Teacher', 'Learner', 'Tinkerer', 'Builder', 'Problem-Solver']
   const [index, setIndex] = useState(0)
   const [items, setItems] = useState(arrayOfWhatIAm)
+    const pageData = useStaticQuery(graphql`
+    {
+      allFile(filter: {extension: { eq: "pdf"} }) {
+        totalCount
+        edges {
+          node {
+            publicURL
+          }
+        }
+      }
+    }
+  `)
+
+
   const springHook = useSpring({delay: 3000}, {from: {opacity:0}}, {to: {opacity:1}})
     
   const transitions = useTransition(arrayOfWhatIAm, null, {
@@ -196,6 +210,8 @@ export default () => {
     }
   }, [index])
 
+  // console.log(data.allFile.edges[0])
+
   return (
     <>
     <HomeLayout isOpen={isOpen} toggleOpen={toggleOpen}>
@@ -211,6 +227,8 @@ export default () => {
             </Column>
             <Column id={2}>
               <Info>There are a lot of tutorials, and lessons that I have benefited from as I've learned, and I want to contribute back to the dev community with my own knowledge.</Info>
+              <Info>If you are interested in having me join your team feel free to check out my  <a href={pageData.allFile.edges[0].node.publicURL}>resume
+              </a>. If you want to get in touch about a potential project or a js topic you are interested in, you can use the form below. It was built using <a href='https://www.netlify.com/products/forms/'>netlify's</a>forms.</Info>
             </Column>
           </Row>
           <Row>
