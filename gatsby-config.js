@@ -38,6 +38,13 @@ module.exports = {
     },
   },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `stuff`,
+        path: `static`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
