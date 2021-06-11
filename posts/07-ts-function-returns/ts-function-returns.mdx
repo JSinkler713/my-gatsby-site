@@ -13,9 +13,9 @@ tags: typescript
 
 ## Return two different types w/ typescript function
 
-The beauty of typescript is supposed to be safety. But safety is hard to achieve and at some point typescript may not let you do something that you can tell will work.
+The beauty of typescript is supposed to be safety. But safety is hard to achieve. It comes with limitations almost by definition. At some point typescripts limitiations may stop you from writing code which will work.
 
-This is good. It will make you write a bit more code to explain yourself to typescript.
+This is <strong>good</strong>. It will make you write a bit more code and make you explain yourself to typescript, and ensure no weird bugs. This is the part that's harder than just js, but  the payoff is it ensures you don't have unexpected errors crop up.
 
 
 ### Task:
@@ -76,7 +76,11 @@ console.log(fromThreeToFive)
 const startAtFour = range(4)
 ```
 
-We made the end parameter  optional. So we changed the start of our function to be `range(start: number, end?:number) {`.
+
+We made the end parameter  optional. So we changed the start of our function to be 
+```typescript
+range(start: number, end?:number) {`
+```
 
 
 Our function still works for a range with two arguments, but if we try `startAtFour = range(4)` it doesn't give us an error or warning, but if we hover over it we can see it doesn't know what it is.
@@ -85,6 +89,7 @@ Our function still works for a range with two arguments, but if we try `startAtF
 const startAtFour: number[] | CallBackFunction
 ```
 
+
 This immediately becomes problematic when we try to call this function with an ending argument.
 
 ```typescript
@@ -92,9 +97,10 @@ const startAtFour = range(4)
 const endedAt9 = startAtFour(9) // should return [4, 5, 6, 7, 8, 9]
 ```
 
+
 ## What do you want typescript?
 
-<strong>Not all constituents of type 'CallBackFunction | number[]' are callable.</strong>
+<strong>Not all constituents of type `CallBackFunction | number[]` are callable.</strong>
 
 In other words you can't invoke  an array of numbers like this `[4](9)`.
 
@@ -109,7 +115,8 @@ const startAtFour = range(4) as CallBackFunction
 
 We can now use it as we wish, and it will expect startAtFour to have the type CallBackFunction moving forward. This was my initial fix before I read a good <a href='https://dev.to/llldar/typescript-function-return-type-based-on-parameters-87d'>article</a> from <a href='https://dev.to/llldar' target='_blank'>Nathaniel</a>. Which led to this other solution.
 
-Solution 2 Function overload
+## Solution 2 Function overload
+
 
 ```typescript
 type callBackFunc = (end: number) => number[]
@@ -137,6 +144,7 @@ const endedAtNine = startAtFour(9)
 console.log(endedAtNine)
 ```
 
+
 When we define range2 after our Typescript definitions, it goes and looks at what we wrote about range2 earlier.
 
 ```typescript
@@ -159,7 +167,7 @@ It is key that we allow the second argument to still be optional when we define 
 
 A <a href='https://www.typescriptlang.org/play?#code/PTDKHsBsFcBcEtwDsAEBGAsAKAGbSQMYLIoBOAhkgOYCmAFAM6zmmwBcS0AtgEY2kAaFDSQATAPwdufUgEoUAb2woUkGrBRIaAdwCCpUigC8KANpMWsALrKUeQsVQjRAMXxFESOlu0BRMWya0vzySlgqKjjghnRqGvBGFqwA1GgA3CjwADwmPv6iGfDJyaG2EZo6+qQAdAAO0AwAFnTwsmUoAL7tpOrQpKg+VbZd4Zk4KHTOxkYm+KI0OPBaoqWjKj2wfU5ibg6eKiDCO+6OKNrwsI0VegbGZknWw8KQDDSK3b39R64nnpNi8kONAAHoFTGghAAmIQAZhsoxGI2whyo8AAbiIULBtOAUCwqAwyJ9UJQ8QZyABPFDgcacXj8BjYOLUrR3CjUegwgQwwHAMxwpnqLE4tmUWgTLkoAAcvP5QgALEIAKxCABsQgA7EIpfDDgBrGhUnGkUQoADk5AYZqEsFIVOYeqWVEyGhpOGqHuwBGQTBQD10sBhoo5dB5eMJBHIkEgACFyAQ9bsCIKNJcejQACrgFzot4mf2BuhK2WmSWKlBK+HepAMKA0aqQcBUOhpmiZ7O5tpYbA9rCHCAwU6Q7CwCm1N6R6NxhNJu7-USBOkyeRGAB8QXppFM8PsHhI7NokImD0XwUE31Pm-kl5k27S2F3pwPNCPjGYrBvIUCk9j8cT7nvbtcF+fcxRfN9LCkTchGcSQlxCd5RmZQZbhMcx30eIDIhA7Yfj2ZBvB0fJPzkRDyiiGJmQSB5UkKHJrnyQpilWcoVBQmp6iaFou3KEZyg2LZriGBFbHgcZ52mWYxAWJYaBWMiIgEr5nCTU4UCBY58NQc5LiE1D7gw+EVA6Z5XgU9ZiW+VS-mcWUQTBCEUGhFABRErAkSwatfQLFxwD6YNDzoeUuy8jRnDkgMADlZLuHy-NIOgAE55C9H06wbJt5wi2Boq0WQgA' target='_blank'>link</a> to the TS Playground with the two solutions.
 
-Thanks for reading, maybe you will find a usecase for this somewhere soon. If you are interested in how we have access the that array with the starting number in our callback function, check out my other post on <a href='https://dev.to/jsinkler713/closure-37je'>`closure`</a>
+Thanks for reading, maybe you will find a usecase for this somewhere soon. If you are interested in how we have access the that array with the starting number in our callback function, check out my other post on <a href='https://dev.to/jsinkler713/closure-37je'>`closure`</a>.
 
 Happy Coding,
 
