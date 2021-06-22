@@ -29,7 +29,8 @@ export const Card = styled.div`
  margin: 48px;
  @media screen and (max-width: 500px) {
    margin: 0px;
-   margin-bottom: 24px;
+   margin-bottom: 64px;
+   width: 100%;
  }
 `
 export const ProjectType = styled.h3`
