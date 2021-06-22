@@ -58,8 +58,8 @@ const Portfolio = ()=> {
                 layout="fullWidth"
               />
              </ProjectImageContainer>
-             <ProjectType>WDArt</ProjectType>
-             <ProjectTitle>E-Commerce</ProjectTitle>
+             <ProjectType>E-Commerce</ProjectType>
+             <ProjectTitle>WDArt</ProjectTitle>
            </StyledLink>
          </Card>
        </CardContainer>
