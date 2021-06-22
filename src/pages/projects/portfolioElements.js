@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 
 export const Container = styled.div`
   color: black;
@@ -11,6 +12,9 @@ export const Container = styled.div`
   /* TODO: fix this */
     padding-top: 20px;
   }
+`
+export const StyledLink = styled(Link)`
+text-decoration: none;
 `
 export const CardContainer = styled.div`
   display: flex;
