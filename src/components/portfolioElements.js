@@ -42,6 +42,9 @@ export const ProjectType = styled.h3`
 export const ProjectImageContainer = styled.div`
   min-width: 465px;
   border-radius: 5px;
+  @media (max-width: 500px) {
+  min-width: 100%;
+  }
 `
 
 export const ProjectTitle = styled.h2`
