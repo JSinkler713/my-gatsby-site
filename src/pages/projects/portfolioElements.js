@@ -78,3 +78,22 @@ export const Subtitle = styled.p`
   color: #fff;
   color: ${({ lightText }) => (lightText ? '#f7f7f7' : '#010606')};
 `
+
+
+/* Single Portfolio Page */
+
+export const Title = styled.h1`
+  position: absolute;
+  text-shadow: 1px 1px black;
+  z-index: 1;
+  top: ${({top}) => top? top : '300px'};
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  text-align: center;
+  color: white;
+  font-size: 64px;
+  @media (max-width: 708px) {
+    top: 100px;
+  }
+`;
