@@ -126,7 +126,7 @@ export default function() {
       style={{ maxWidth: '800px' }}
     >
       <StaticImage
-        src="../project-assets/hero.jpg"
+        src="../../project-assets/hero.jpg"
         alt="A dinosaur"
         placeholder="blurred"
         layout="fullWidth"
@@ -185,7 +185,7 @@ export default function() {
           <SideBySide>
             <LeftSide style={{ padding: '6px' }}>
               <StaticImage
-                src="../project-assets/icons.png"
+                src="../../project-assets/icons.png"
                 alt="icons designed in figma"
                 placeholder="blurred"
               />
@@ -213,14 +213,14 @@ export default function() {
           </SideBySide>
         </LeftSide>
         <StaticImage
-          src="../project-assets/computer-weather.png"
+          src="../../project-assets/computer-weather.png"
           alt="weather report on a laptop screen"
           placeholder="blurred"
           layout="fullWidth"
         />
       </SideBySide>
       <StaticImage
-        src="../project-assets/phone-in-hands.jpg"
+        src="../../project-assets/phone-in-hands.jpg"
         alt="hands holding weather app"
         placeholder="blurred"
         layout="fullWidth"
@@ -228,7 +228,7 @@ export default function() {
       <SideBySide>
         <LeftSide>
           <StaticImage
-            src="../project-assets/sky-gradients.png"
+            src="../../project-assets/sky-gradients.png"
             alt="gradients designed in figma"
             placeholder="blurred"
             layout="constrained"
