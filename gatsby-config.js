@@ -1,4 +1,8 @@
 module.exports = {
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true
+  },
   siteMetadata: {
     title: 'James Sinkler Developer',
     description: 'A site powered by Gatsby and React, built by James Sinkler'
