@@ -1,11 +1,12 @@
 import React, {useState, useEffect, useContext} from 'react'; 
+import { Link } from 'gatsby'
 import HomeLayout from '../../components/homelayout'
 import useIsOpen from '../../hooks/use-isOpen';
 import { StaticImage } from "gatsby-plugin-image"
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import FooterContact from '../../components/Footer-Contact'
-import {Container,CardContainer, Card, ProjectImageContainer, ProjectType, ProjectTitle, TopLine, Heading, Subtitle  } from './portfolioElements'
+import {Container,CardContainer, StyledLink, Card, ProjectImageContainer, ProjectType, ProjectTitle, TopLine, Heading, Subtitle  } from './portfolioElements'
 
 
 const Portfolio = ()=> { 
@@ -20,22 +21,24 @@ const Portfolio = ()=> {
        <Subtitle>Here are a few of my recent projects. If you want to see more, feel free to browse my <a href='https://github.com/JSinkler713' target="_blank">gitHub</a>.</Subtitle>
        <CardContainer>
          <Card>
+           <StyledLink to='./weather-report'>
            <ProjectImageContainer>
              <StaticImage
-              src="../../project-assets/hero.jpg"
-              alt="A dinosaur"
+              src='./project-assets/weather-report-preview.png'
+              alt="A phone displaying the weather"
               placeholder="blurred"
               layout="fullWidth"
             />
            </ProjectImageContainer>
            <ProjectType>Application</ProjectType>
            <ProjectTitle>Weather Report</ProjectTitle>
+           </StyledLink>
          </Card>
          <Card>
            <ProjectImageContainer>
              <StaticImage
-              src="../../project-assets/hero.jpg"
-              alt="A dinosaur"
+              src='./project-assets/california-equipment-preview.png'
+              alt="A phone displaying the weather"
               placeholder="blurred"
               layout="fullWidth"
             />
@@ -46,8 +49,8 @@ const Portfolio = ()=> {
          <Card>
            <ProjectImageContainer>
              <StaticImage
-              src="../../project-assets/hero.jpg"
-              alt="A dinosaur"
+              src='./project-assets/wdart-preview.png'
+              alt="A phone displaying the weather"
               placeholder="blurred"
               layout="fullWidth"
             />
