@@ -1,14 +1,14 @@
 import React, {useState, useEffect, useContext} from 'react'; 
-import HomeLayout from '../components/homelayout'
+import HomeLayout from '../../components/homelayout'
 import { Link } from 'gatsby'
 // import '../phoneStyle.css'
 import { useSpring } from 'react-spring'
-import useIsOpen from '../hooks/use-isOpen';
+import useIsOpen from '../../hooks/use-isOpen';
 import { StaticImage } from "gatsby-plugin-image"
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import {  FaGithub, FaLinkedin } from 'react-icons/fa'
-import WeatherIcon  from '../project-assets/weather-icon.png'
+import WeatherIcon  from '../../project-assets/weather-icon.png'
 
 const Title = styled.h1`
   position: absolute;
