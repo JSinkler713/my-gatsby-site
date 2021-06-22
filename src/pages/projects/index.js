@@ -35,7 +35,7 @@ const Portfolio = ()=> {
            </StyledLink>
          </Card>
          <Card>
-           <StyledLink to='./weather-report'>
+           <StyledLink to='./california-equipment'>
              <ProjectImageContainer>
                <StaticImage
                 src='./project-assets/california-equipment-preview.png'
@@ -49,7 +49,7 @@ const Portfolio = ()=> {
            </StyledLink>
          </Card>
          <Card>
-           <StyledLink to='./weather-report'>
+           <StyledLink to='./wd-art'>
              <ProjectImageContainer>
                <StaticImage
                 src='./project-assets/wdart-preview.png'
