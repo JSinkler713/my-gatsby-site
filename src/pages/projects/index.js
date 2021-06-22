@@ -6,7 +6,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import FooterContact from '../../components/Footer-Contact'
-import {Container,CardContainer, StyledLink, Card, ProjectImageContainer, ProjectType, ProjectTitle, TopLine, Heading, Subtitle  } from './portfolioElements'
+import {Container,CardContainer, StyledLink, Card, ProjectImageContainer, ProjectType, ProjectTitle, TopLine, Heading, Subtitle  } from '../../components/portfolioElements'
 
 
 const Portfolio = ()=> { 
@@ -24,7 +24,7 @@ const Portfolio = ()=> {
            <StyledLink to='./weather-report'>
            <ProjectImageContainer>
              <StaticImage
-              src='./project-assets/weather-report-preview.png'
+              src='../../portfolio-assets/weather-report-preview.png'
               alt="A phone displaying the weather"
               placeholder="blurred"
               layout="fullWidth"
@@ -38,7 +38,7 @@ const Portfolio = ()=> {
            <StyledLink to='./california-equipment'>
              <ProjectImageContainer>
                <StaticImage
-                src='./project-assets/california-equipment-preview.png'
+                src='../../portfolio-assets/california-equipment-preview.png'
                 alt="A phone displaying the weather"
                 placeholder="blurred"
                 layout="fullWidth"
@@ -52,7 +52,7 @@ const Portfolio = ()=> {
            <StyledLink to='./wd-art'>
              <ProjectImageContainer>
                <StaticImage
-                src='./project-assets/wdart-preview.png'
+                src='../../portfolio-assets/wdart-preview.png'
                 alt="A phone displaying the weather"
                 placeholder="blurred"
                 layout="fullWidth"

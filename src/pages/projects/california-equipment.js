@@ -7,7 +7,7 @@ import useIsOpen from '../../hooks/use-isOpen';
 import { StaticImage } from 'gatsby-plugin-image';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Title, } from './portfolioElements';
+import { Title, } from '../../components/portfolioElements';
 
 export default function() {
   //const [show1, setShow1] = useState(true);
@@ -21,7 +21,7 @@ export default function() {
       style={{ maxWidth: '800px' }}
     >
       <StaticImage
-        src="./project-assets/california-equipment-preview.png"
+        src="../../portfolio-assets/california-equipment-preview.png"
         alt="A dinosaur"
         placeholder="blurred"
         layout="fullWidth"
