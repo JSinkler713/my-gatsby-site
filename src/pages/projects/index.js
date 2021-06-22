@@ -35,28 +35,32 @@ const Portfolio = ()=> {
            </StyledLink>
          </Card>
          <Card>
-           <ProjectImageContainer>
-             <StaticImage
-              src='./project-assets/california-equipment-preview.png'
-              alt="A phone displaying the weather"
-              placeholder="blurred"
-              layout="fullWidth"
-            />
-           </ProjectImageContainer>
-           <ProjectType>Business</ProjectType>
-           <ProjectTitle>California Equipment</ProjectTitle>
+           <StyledLink to='./weather-report'>
+             <ProjectImageContainer>
+               <StaticImage
+                src='./project-assets/california-equipment-preview.png'
+                alt="A phone displaying the weather"
+                placeholder="blurred"
+                layout="fullWidth"
+              />
+             </ProjectImageContainer>
+             <ProjectType>Business</ProjectType>
+             <ProjectTitle>California Equipment</ProjectTitle>
+           </StyledLink>
          </Card>
          <Card>
-           <ProjectImageContainer>
-             <StaticImage
-              src='./project-assets/wdart-preview.png'
-              alt="A phone displaying the weather"
-              placeholder="blurred"
-              layout="fullWidth"
-            />
-           </ProjectImageContainer>
-           <ProjectType>WDArt</ProjectType>
-           <ProjectTitle>E-Commerce</ProjectTitle>
+           <StyledLink to='./weather-report'>
+             <ProjectImageContainer>
+               <StaticImage
+                src='./project-assets/wdart-preview.png'
+                alt="A phone displaying the weather"
+                placeholder="blurred"
+                layout="fullWidth"
+              />
+             </ProjectImageContainer>
+             <ProjectType>WDArt</ProjectType>
+             <ProjectTitle>E-Commerce</ProjectTitle>
+           </StyledLink>
          </Card>
        </CardContainer>
      </Container>
