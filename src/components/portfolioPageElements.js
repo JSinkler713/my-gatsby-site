@@ -1,15 +1,13 @@
-import React from 'react';
-import { StaticImage } from 'gatsby';
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
  display: flex;
  justify-content: center;
  padding: 20px;
- /* Will get sucked up in margin at bigger sizes */
 `
 export const ImageContainer = styled.div`
  width: 100%;
+ padding-bottom: 20px;
 `
 
 export const Content = styled.div`
@@ -57,10 +55,11 @@ display: grid;
 grid-template-columns: 130px 130px 130px 130px;
 grid-template-rows: 200px 200px;
 align-items: center;
+overflow-x: clip;
  @media screen and (max-width: 500px) {
-  grid-template-columns: 130px 130px;
-  grid-template-rows: 150px  150px 150px;
-  margin: 0px;
+  grid-template-columns: 140px 140px;
+  grid-template-rows: 200px 200px 200px 200px;
+  margin: 0 auto;
   margin-bottom: 64px;
   width: fit-content;
   align-items:start;
@@ -71,15 +70,20 @@ export const IconWrapper = styled.div`
 margin: 8px;
 width: 80px;
 height: 150px;
-overflow-z: hidden;
- @media screen and (max-width: 500px) {
-  grid-template-columns: 130px 130px;
-  grid-template-rows: 200px 200px 200px 200px;
-   margin: 0 10px;
-   margin-bottom: 64px;
-   width: fit-content;
+/*overflow-x: hidden;*/
    p {
-    word-break: break-word;
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+@media screen and (max-width: 500px) {
+  grid-template-columns: 140px 140px;
+  grid-template-rows: 200px 200px 200px 200px;
+  margin: 0 auto;
+  width: fit;
+   p {
+      overflow-x: hidden;
+      margin-bottom: 0;
+      font-size: 16px;
     }
  }
 `
@@ -92,3 +96,20 @@ overflow-x: hidden;
 export const IconTitle = styled.p`
 font-size: 12px;
 `
+
+export const Title = styled.h1`
+  position: absolute;
+  text-shadow: 1px 1px black;
+  z-index: 1;
+  top: ${({top}) => top? top : '300px'};
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  text-align: center;
+  color: white;
+  font-size: 64px;
+  @media (max-width: 708px) {
+    top: 100px;
+    font-size: 48px;
+  }
+`;
