@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import HomeLayout from '../../components/homelayout';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-// import '../phoneStyle.css'
 import { useSpring } from 'react-spring';
 import useIsOpen from '../../hooks/use-isOpen';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -130,8 +129,6 @@ export default function() {
               </IconWrapper>
             </TechnologyHolder>
           </TechWrapper>
-          <SubHeader>Summary</SubHeader>
-          <p>A responsive, fast, easy to navigate storefront to buy digital assets. The stripe implementation combined with React’s useContext hook for cart management, makes this this a full featured storefront.</p>
           <ImageContainer>
                <StaticImage
                 src='../../portfolio-assets/wdart-third-pic.png'
@@ -140,6 +137,8 @@ export default function() {
                 layout="fullWidth"
               />
           </ImageContainer>
+          <SubHeader>Summary</SubHeader>
+          <p>A responsive, fast, easy to navigate storefront to buy digital assets. The stripe implementation combined with React’s useContext hook for cart management, makes this this a full featured storefront.</p>
           <SubHeader>Want More?</SubHeader>
           <p>Feel free to browse the code, or check out the live site with the following links.</p>
           <p>Code at <a href='https://github.com/JSinkler713/wall-deco'>GitHub</a> / <a href='https://wall-art-deco.netlify.app/' >Live Site </a>.</p>
