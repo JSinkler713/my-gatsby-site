@@ -14,7 +14,7 @@ export const ImageContainer = styled.div`
 
 export const Content = styled.div`
   margin: 0 20px;
-  max-width: 1152px;
+  max-width: 1100px;
   min-width: 100%;
   p {
   font-family: Poppins;
@@ -27,7 +27,9 @@ export const Content = styled.div`
   }
  @media screen and (max-width: 640px) {
   margin: 0 20px;
-
+ }
+ @media screen and (min-width: 1100px) {
+  min-width: unset;
  }
 `
 export const SubHeader = styled.h2`
