@@ -73,7 +73,8 @@ height: 150px;
 /*overflow-x: hidden;*/
    p {
       margin-bottom: 0;
-      font-size: 18px;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.6);
     }
 @media screen and (max-width: 500px) {
   grid-template-columns: 140px 140px;
@@ -83,7 +84,7 @@ height: 150px;
    p {
       overflow-x: hidden;
       margin-bottom: 0;
-      font-size: 16px;
+      font-size: 12px;
     }
  }
 `
