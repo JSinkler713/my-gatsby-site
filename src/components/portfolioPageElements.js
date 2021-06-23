@@ -31,10 +31,29 @@ export const SubHeader = styled.h2`
   margin-top: 24px;
   text-align: ${({center}) => (center ? 'center' : 'left')};
 `
+export const TechWrapper = styled.div`
+display: flex;
+justify-content: center;
+margin: 40px;
+`
 export const TechnologyHolder = styled.div`
+justify-self: center;
+align-self: center;
+width: 520px;
 display: grid;
+grid-template-columns: 130px 130px 130px 130px;
+grid-template-rows: 200px 200px;
+align-items: center;
+`
+export const IconWrapper = styled.div`
+margin: 8px;
+width: 100px;
+height: 150px;
 `
 export const TechName = styled.p`
 font-size: 12px;
 `
 
+export const IconTitle = styled.p`
+font-size: 12px;
+`
