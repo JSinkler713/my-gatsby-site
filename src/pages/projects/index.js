@@ -36,7 +36,7 @@ const Portfolio = () => {
             Here are a few of my recent projects. If you want to see more, feel
             free to browse my{' '}
             <a href="https://github.com/JSinkler713" target="_blank">
-              gitHub
+              GitHub
             </a>
             .
           </Subtitle>
