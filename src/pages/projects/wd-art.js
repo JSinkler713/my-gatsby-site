@@ -38,7 +38,7 @@ export default function() {
           <ImageContainer>
             {/* TODO: GET BETTER SCREENSHOT */}
                <StaticImage
-                src='../../portfolio-assets/wdart-second-pic.png'
+                src='../../portfolio-assets/wdart-second-pic.jpg'
                 alt="A phone displaying the weather"
                 placeholder="blurred"
                 layout="fullWidth"
