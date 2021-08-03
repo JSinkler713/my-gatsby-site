@@ -228,7 +228,7 @@ export default () => {
             <Column id={2}>
               <Info>There are a lot of tutorials, and lessons that I have benefited from as I've learned, and I want to contribute back to the dev community with my own knowledge.</Info>
               <Info>If you are interested in having me join your team feel free to check out my  <a href={pageData.allFile.edges[0].node.publicURL}>resume
-              </a>. If you want to get in touch about a potential project or a js topic you are interested in, you can use the form below. It was built using <a href='https://www.netlify.com/products/forms/'>netlify's</a>forms.</Info>
+              </a>. If you want to get in touch about a potential project or a js topic you are interested in, you can use the form below. It was built using <a href='https://www.netlify.com/products/forms/'>netlify's</a> forms.</Info>
             </Column>
           </Row>
           <Row>
