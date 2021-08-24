@@ -3,6 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 const IconContainer = () => {
   const icons = ['React', 'Gatsby']
+  {/* Does not work
   const iconsArray = icons.map((icon) => (
     <div>
       <StaticImage
@@ -17,6 +18,7 @@ const IconContainer = () => {
       <p>{icon}</p>
     </div>
   ));
-  return <div>{iconsArray}</div>;
+  */}
+  return <div></div>;
 };
 export default IconContainer;
