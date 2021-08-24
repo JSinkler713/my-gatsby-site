@@ -1,0 +1,113 @@
+---
+title: JS-Set
+slug: js-set
+author: James Sinkler
+meta: 'A quick example of using a set when a regular object just can not handle what you need it to.'
+image: ./images/seashells.jpg
+tags: js set linkedList
+---
+
+<em>Set of SeaShells on the Shore</em><br/>
+<span>Photo by <a href="https://unsplash.com/@oskarssylwan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Oskars Sylwan</a> on <a href="https://unsplash.com/s/photos/collection?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
+
+
+## Javascript objects are great! But a little primitive.
+
+The javascript object is a force to be reckoned with. It's very versatile, and is a great place to store simple key value pairs.
+
+
+Got some characters to keep track of? Use an object.
+
+Have some numbers to keep track of? Use an object.
+
+Have some nodes to keep track of? Well...
+
+
+## Javascript Set
+
+Again an `{}` is  great for **simple** key value pairs. The keys are always going to be real simple. String's or if they are a number, they will be converted into a string. This is normally fine, and the values you store can still be complex, like a function or another object.
+
+It's only an issue if you want your key to be more complex.
+
+I was solving a little coding algorithm where I was looking to see if two linked lists had a shared part in common.
+```js
+/*
+  Intersecting
+  2 - 3 - 7 \ 
+            4 - 5 - 3
+    9 - 10 /
+
+  Not intersecting
+  2 - 3 - 7
+
+  9 - 3
+*/
+```
+
+
+One thing I thought, is I could just iterate through one, and store all the references to them, since I've used this pattern in many problems involving strings, or numbers, as keys.
+
+The issue is that a linkedList is made up of nodes, so it's a **complex value**. If I was just comparing the `data` property it would be fine, but I wanted to know if it was the **exact same node** not just one with the same **data** value.
+
+```js
+// Ex Node:
+node = {
+  data:4,
+  next: nextNode
+}
+```
+
+## Set
+
+A quick heads up. This is not the most efficient way to solve this problem. Lookup in a set can be `O(n)`, but it will allow us to store the complex data structure. Overall the solution I'm talking about was O(n^2) time complexity because you store one list, then loop through the other and do lookups in the set. I actually did a better solution at the time, but went back to looking at it with a set because my first instinct was with an object and I wanted to actually implement it with a set.
+
+```
+function inefficientIntersectingLists(ll1, ll2) {
+  let firstNode = ll1
+  let secondNode = ll2
+  const setOfNodes = new Set()
+
+  // insert into our set
+  while (firstNode !== null) {
+    setOfNodes.add(firstNode)
+    firstNode = firstNode.next
+  }
+  // loop through second linkedList check for overlap
+  while (secondNode !== null) {
+    if (setOfNodes.has(secondNode)) {
+      return secondNode
+    }
+    secondNode = secondNode.next
+  }
+  return 'No overlap'
+}
+```
+
+
+### Implementation 
+
+Easy to **set** it up. 😁.
+```js
+  const setOfNodes = new Set()
+```
+You can **add** this to your reportoire
+```js
+  setOfNodes.add(firstNode)
+```
+If your keys need to be complex the Set **has** what you need
+```js
+    if (setOfNodes.has(secondNode)) {
+```
+
+### Takeaways
+
+Use a set when you have some complex values you want to store as keys. If you are just dealing with primitive values such as `strings` and `numbers` use an object since that has constant lookup time `O(1)`. Heres some more information on using a set [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/ "I ❤️  MDN").
+
+If you don't care about sets at all, but now want to see the more optimal solution to the linked list overlap problem, check it out [here](https://github.com/JSinkler713/animated-broccoli/blob/main/js/intersectingLinkedLists.js "github link").
+
+Thanks for reading, maybe you will find a usecase for this somewhere soon.
+
+Happy Coding,
+
+James
+
