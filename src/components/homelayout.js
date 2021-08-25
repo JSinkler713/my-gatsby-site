@@ -7,7 +7,7 @@ import useSiteMetadata from '../hooks/use-sitemetadata';
 
 const HomeLayout = ({children, toggleOpen, isOpen}) => {
   // desctructuring to those two values returned in the object
-  const { title, description, image } = useSiteMetadata()
+  const { title, description, image, url } = useSiteMetadata()
 
   return (
     <>
@@ -55,7 +55,7 @@ const HomeLayout = ({children, toggleOpen, isOpen}) => {
         <html lang='en' />
         <title>{title}</title>
         <meta name='description' content={description} />
-        <meta name='image' content={image} />
+        <meta property="og:image" content={`${url}${image}`} />
       </Helmet>
       <Header toggleOpen={toggleOpen} />
       <Sidebar isOpen={isOpen} toggleOpen={toggleOpen} />

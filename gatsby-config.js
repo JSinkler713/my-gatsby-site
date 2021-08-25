@@ -9,7 +9,8 @@ module.exports = {
   siteMetadata: {
     title: 'James Sinkler Developer',
     description: 'A site powered by Gatsby and React, built by James Sinkler',
-    image: require.resolve('./siteImage.png')
+    url: "https://www.jamessinkler.com",
+    image: "/siteImage.png"
 
   },
   plugins: ['gatsby-plugin-emotion', 
