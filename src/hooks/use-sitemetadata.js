@@ -12,6 +12,7 @@ const useSiteMetadata = () => {
           title
           description
           image
+          url
         }
       }
     }
