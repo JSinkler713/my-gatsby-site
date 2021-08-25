@@ -1,3 +1,6 @@
+//import siteImage from './siteImage.png'
+
+
 module.exports = {
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
@@ -5,7 +8,9 @@ module.exports = {
   },
   siteMetadata: {
     title: 'James Sinkler Developer',
-    description: 'A site powered by Gatsby and React, built by James Sinkler'
+    description: 'A site powered by Gatsby and React, built by James Sinkler',
+    image: require.resolve('./siteImage.png')
+
   },
   plugins: ['gatsby-plugin-emotion', 
     'gatsby-plugin-image',
