@@ -49,13 +49,14 @@ const HomeLayout = ({children, toggleOpen, isOpen}) => {
         li {
         margin-top: 0.25rem;
         }
-      }
+      
       `} />
       <Helmet>
         <html lang='en' />
-        <title>{title}</title>
-        <meta name='description' content={description} />
+        <meta property="og:title" content={title} />
         <meta property="og:image" content={`${url}${image}`} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={url} />
       </Helmet>
       <Header toggleOpen={toggleOpen} />
       <Sidebar isOpen={isOpen} toggleOpen={toggleOpen} />
