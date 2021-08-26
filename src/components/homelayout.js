@@ -54,7 +54,10 @@ const HomeLayout = ({children, toggleOpen, isOpen}) => {
       <Helmet>
         <html lang='en' />
         <meta property="og:title" content={title} />
+        {/*
         <meta property="og:image" content={`${url}${image}`} />
+        */}
+        <meta property="og:image" content={`https://imgur.com/ZcaJA4d`} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url} />
       </Helmet>
