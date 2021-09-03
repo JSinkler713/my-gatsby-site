@@ -86,7 +86,7 @@ export const blogHeader = {
   headline: 'Read 📓 my posts',
   description: "This is where I like to share some of my findings. Sometimes it's react related, other times it's straight javascript. Hope you enjoy.",
   buttonLabel: 'Read Latest',
-  button: '/blog/react-spring',
+  button: '/blog/js-set',
   imgStart: true,
   img: imgTwo,
   alt: 'Read Latest',
